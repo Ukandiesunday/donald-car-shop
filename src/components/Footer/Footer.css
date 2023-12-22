@@ -1,0 +1,50 @@
+.footer {
+  padding: 70px 0 25px 0;
+  background-color: white;
+  color: rgb(27, 25, 25);
+}
+.footer-top-container {
+  display: flex;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 14px;
+  margin: 10px;
+}
+.col2 {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  padding: 0 10px;
+  font-size: 14px;
+  margin: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: 7px;
+}
+.foot-bottom {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+hr {
+  border: 1px solid grey;
+  margin: 10px 40px;
+}
+.row1 i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.copy {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
+}

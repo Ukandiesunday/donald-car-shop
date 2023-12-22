@@ -1,9 +1,11 @@
-.hero-slide {
-  margin-top: 60px;
-  position: relative;
+.slider {
   overflow: hidden;
-  height: calc(100vh - 95px);
-  width: 100%;
+  margin-top: 70px;
+}
+
+.hero-slide {
+  height: calc(100vh - 100px);
+  max-width: 100vw;
 }
 
 .slider__item-01 {
@@ -34,13 +36,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* .hero-slide {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-} */
+.hero-content {
+  z-index: 2;
+}

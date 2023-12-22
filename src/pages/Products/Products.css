@@ -1,0 +1,37 @@
+.products {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  margin: 120px 0 50px;
+  padding: 0 3%;
+  gap: 20px;
+  position: relative;
+}
+.cat-left {
+  flex: 1;
+  position: sticky;
+  height: 100px;
+  top: 100px;
+}
+.cat-right {
+  flex: 4;
+}
+.inputItems {
+  margin: 10px 0;
+}
+.inputItems span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.input-container h2,
+.sort-container h2 {
+  color: #2879fe;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.input-container label {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}

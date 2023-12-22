@@ -6,6 +6,10 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+body {
+  margin: 0;
+}
 .link {
   text-decoration: none;
   margin-right: 5px;

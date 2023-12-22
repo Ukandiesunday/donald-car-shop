@@ -3,10 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HeroSlider.css";
-// import img1 from "../../assets/images/hero-cars/bmw.png";
-// import img2 from "../../assets/images/hero-cars/mercedes.jpg";
-// import img3 from "../../assets/images/hero-cars/nissan.jpg";
-// import img4 from "../../assets/images/hero-cars/toyota.png";
+
 const HeroSlider = () => {
   const settings = {
     autoplay: true,
@@ -19,9 +16,11 @@ const HeroSlider = () => {
     pauseOnHover: false,
   };
   return (
-    <Slider {...settings}>
+    <Slider className="slider" {...settings}>
       <div className="hero-slide slider__item-01">
-        <img src="" alt="" />
+        <div className="hero-content">
+          Get the best of our BMW cars and reserve 50% off your trades.
+        </div>
       </div>
       <div className="hero-slide slider__item-02">
         <img src="" alt="" />

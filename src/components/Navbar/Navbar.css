@@ -1,37 +1,37 @@
-.top-navbar {
+.nav-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
-  height: 50px;
-  color: white;
-  padding: 0 5%;
-  background-color: #2c3458;
+  padding: 15px 5%;
+}
+.logo {
+  color: #2879fe;
+  font-size: 20px;
+  font-weight: 600;
+  text-wrap: nowrap;
 }
 .navbar {
+  height: 75px;
   position: fixed;
   width: 100%;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 70;
+  z-index: 2;
+  background-color: #fff;
 }
-.sos-icon {
-  margin-right: 7px;
-  font-size: 18px;
-}
-.login,
+
 .user {
   margin: 5px;
   font-size: 18px;
+  text-wrap: nowrap;
+  cursor: pointer;
 }
-.users {
-  font-size: 20px !important;
-}
+
 .cart {
   font-size: 22px;
   margin-left: 10px;
   position: relative;
+  cursor: pointer;
 }
 .cart-amount {
   position: absolute;
@@ -39,56 +39,28 @@
   flex-shrink: 1;
   align-items: center;
   justify-content: center;
-  top: -20px;
+  top: -22px;
   left: 0;
   bottom: 0;
-  right: -10px;
+  right: -13px;
   padding: 10px;
   font-weight: 600;
   font-size: 18px;
-  color: #c3d3ea;
+  color: #2879fe;
+}
+.row1 h2,
+.row2 h2 {
+  color: #2879fe;
 }
 
-.nav-center {
-  background: #ffff;
-  height: 25px;
-  text-align: center;
-}
-
-.nav-bottom {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5%;
-  background-color: #2c3458;
-  height: 40px;
-  color: white;
-}
 .pages span {
   margin-right: 10px;
   font-size: 18px;
 }
-.input-container {
-  flex-shrink: 0;
-  border: none;
-  height: 30px;
-}
-.search input {
-  border-radius: 25px 0 0 25px;
-  height: 100%;
-  padding-left: 5px;
-  width: 100px;
-  border: none;
-  background-color: #c3d3ea;
-}
-.search input:focus {
-  outline: none;
-}
-.search-btn {
-  border: none;
-  border-radius: 0 25px 25px 0;
-  background-color: #c3d3ea;
-  padding-right: 10px;
-  height: 30px;
+
+.link-nav {
+  color: black;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 18px;
 }

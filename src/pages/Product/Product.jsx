@@ -1,34 +1,30 @@
 import "./Product.css";
-import benz1 from "../../assets/images/benz1w.jpg";
-import benz2 from "../../assets/images/benz2b.jpg";
-
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { products } from "../../assets/data/data";
 const Product = () => {
-  const [mainImg, setMainImg] = useState(0);
   const [amount, setAmount] = useState(0);
-  const car = [benz1, benz2];
+  const { id } = useParams();
+  const { title, img, desc, price, condition, make } = products.find(
+    (item) => item.id === id
+  );
+
   return (
     <div className="product">
       <div className="product-left">
-        <h2>select product</h2>
-        <div className="img">
-          <img
-            src={car[0]}
-            alt=" white benz car"
-            onClick={() => setMainImg(0)}
-          />
+        <h2>
+          proceed to buy your {condition} {make} car
+        </h2>
+        <div className="product-center">
+          <div className="img">
+            <img src={img} />
+          </div>
         </div>
-        <div className="img">
-          <img src={car[1]} alt="black benz" onClick={() => setMainImg(1)} />
-        </div>
-      </div>
-      <div className="product-center">
-        <img src={car[mainImg]} alt="" />
       </div>
       <div className="product-right">
-        <h2>Title benz car</h2>
-        <span className="cart-price">Price$88.34</span>
-        <div className="desc-2">Lorem, ipsum dolor sit amet consectetur</div>
+        <h2>{title}</h2>
+        <span className="cart-price">{price}</span>
+
         <div className="amt-container">
           <button
             className="cart-btn"
@@ -51,17 +47,16 @@ const Product = () => {
         </button>
         <div className="wishlist">
           <span>
-            <i class="ri-hearts-line"></i>ADD TO WISHLIST
+            <i className="ri-hearts-line"></i>ADD TO WISHLIST
           </span>
           <br />
           <span>
-            <i class="ri-hand-heart-line"></i>ADD TO COMPARE
+            <i className="ri-hand-heart-line"></i>ADD TO COMPARE
           </span>
         </div>
         <div className="desc-2">
           <h4>DESCRIPTION</h4>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime,
-          praesentium?
+          {desc}
         </div>
       </div>
     </div>

@@ -1,15 +1,12 @@
-import Category from "../../components/Category/Category";
-
 import HeroSlider from "../../components/Hero/HeroSlider";
-import TrendingProducts from "../../components/TrendingProducts/TrendingProducts";
 import "./Home.css";
+import Products from "../../pages/Products/Products";
 
 const Home = () => {
   return (
     <div className="home">
       <HeroSlider />
-      <TrendingProducts />
-      <Category />
+      <Products />
     </div>
   );
 };

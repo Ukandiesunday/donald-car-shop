@@ -12,7 +12,13 @@ body {
 }
 .link {
   text-decoration: none;
-  margin-right: 5px;
+  margin-right: 10px;
   font-size: 18px;
-  color: white;
+  color: #2879fe;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 13px;
+  }
 }

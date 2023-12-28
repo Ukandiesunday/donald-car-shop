@@ -1,0 +1,41 @@
+.inputItems {
+  margin: 10px 0;
+}
+
+.inputItems button {
+  display: block;
+  cursor: pointer;
+  border: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+.inputItems span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.input-container h2,
+.sort-container h2,
+.sort-color h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: rgb(97, 93, 93);
+}
+
+.input-container label,
+.sort-color label {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .input-container h2,
+  .sort-container h2 {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  .input-container label {
+    font-size: 13px;
+  }
+}

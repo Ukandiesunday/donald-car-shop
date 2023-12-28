@@ -1,41 +1,52 @@
+.slider-wrapper {
+  margin-top: 65px;
+  margin-bottom: -40px;
+}
 .slider {
   overflow: hidden;
-  margin-top: 70px;
 }
 
 .hero-slide {
   height: calc(100vh - 100px);
   max-width: 100vw;
+  position: relative;
 }
 
+.hero {
+  padding-top: 200px;
+  width: 100%;
+  height: 300px;
+}
 .slider__item-01 {
-  background: linear-gradient(rgb(0, 13, 107, 0.5), rgb(0, 13, 107, 0.5)),
+  background: linear-gradient(rgb(0, 13, 107, 0.3), rgb(0, 13, 107, 0.3)),
     url("/public/slider/bmw.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .slider__item-02 {
-  background: linear-gradient(rgb(0, 13, 107, 0.5), rgb(0, 13, 107, 0.5)),
+  background: linear-gradient(rgb(0, 13, 107, 0.3), rgb(0, 13, 107, 0.3)),
     url("/public/slider/nissan.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .slider__item-03 {
-  background: linear-gradient(rgb(0, 13, 107, 0.5), rgb(0, 13, 107, 0.5)),
+  background: linear-gradient(rgb(0, 13, 107, 0.3), rgb(0, 13, 107, 0.3)),
     url("/public/slider/mercedes.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .slider__item-04 {
-  background: linear-gradient(rgb(0, 13, 107, 0.5), rgb(0, 13, 107, 0.5)),
+  background: linear-gradient(rgb(0, 13, 107, 0.3), rgb(0, 13, 107, 0.3)),
     url("/public/slider/toyota.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .hero-content {
+  position: absolute;
+  bottom: 20px;
   z-index: 2;
 }

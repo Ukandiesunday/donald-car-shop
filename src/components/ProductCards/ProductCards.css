@@ -1,0 +1,40 @@
+.cards {
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 20px;
+  gap: 20px;
+}
+.card-link {
+  box-shadow: 0 0 1px rgb(81, 77, 77);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.card-link:hover {
+  box-shadow: 0 0 3px rgb(81, 77, 77);
+}
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
+.img-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: fit-content;
+  display: block;
+}
+
+.links {
+  text-decoration: none;
+  color: rgb(81, 77, 77);
+}
+.details {
+  margin: 10px 5px;
+}
+.price {
+  margin-top: 7px;
+  font-weight: 600;
+  font-size: 18px;
+}

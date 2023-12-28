@@ -1,11 +1,20 @@
 .nav-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 5%;
+  background-color: rgb(25, 25, 62);
+}
+.active {
+  text-decoration: none;
+  padding: 4px 10px;
+  background: linear-gradient(90deg, rgb(185, 101, 101), blue);
+  color: rgb(202, 202, 212);
+  border-radius: 20px;
 }
 .logo {
   color: #2879fe;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
   text-wrap: nowrap;
 }
@@ -17,21 +26,35 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background-color: #fff;
 }
-
+ul li {
+  color: #2879fe;
+}
+.right-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+}
 .user {
-  margin: 5px;
   font-size: 18px;
   text-wrap: nowrap;
   cursor: pointer;
+  color: rgb(202, 202, 212);
+  background: rgb(185, 101, 101);
+  padding: 4px 10px;
+  border-radius: 20px;
 }
-
+.search-icon {
+  color: rgb(202, 202, 212);
+  font-size: 20px;
+  cursor: pointer;
+}
 .cart {
   font-size: 22px;
   margin-left: 10px;
   position: relative;
   cursor: pointer;
+  color: rgb(202, 202, 212);
 }
 .cart-amount {
   position: absolute;
@@ -57,10 +80,66 @@
   margin-right: 10px;
   font-size: 18px;
 }
-
-.link-nav {
+ul {
+  list-style: none;
+}
+ul li {
   color: black;
-  text-decoration: none;
+  list-style: none;
   margin-right: 15px;
   font-size: 18px;
+  display: inline-block;
+}
+.menu-container,
+.nav {
+  display: none;
+}
+@media (max-width: 768px) {
+  .top-left-nav {
+    display: none;
+  }
+
+  .user {
+    display: none;
+  }
+  .cart {
+    margin-right: -20px;
+  }
+  .user2 {
+    display: block;
+    margin-top: 30px;
+  }
+  .nav {
+    position: relative;
+    display: block;
+  }
+  .nav.close-menu {
+    display: none;
+  }
+
+  ul {
+    position: absolute;
+    background-color: #fff;
+    top: 9px;
+    left: 20px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding-block: 20px;
+    box-shadow: 0 0 3px #bacbe6;
+  }
+
+  ul li {
+    display: block;
+  }
+  .menu-container {
+    display: block;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(202, 202, 212);
+    margin-right: 10px;
+  }
 }

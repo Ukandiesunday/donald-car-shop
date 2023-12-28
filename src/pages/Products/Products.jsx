@@ -1,53 +1,82 @@
-import { useParams } from "react-router-dom";
-import Lists from "../../components/Lists/Lists";
 import "./Products.css";
+import ProductCards from "../../components/ProductCards/ProductCards";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import Input from "../../components/Input/Input";
+import { products } from "../../assets/data/data";
 import { useState } from "react";
+import Design from "../../components/CarDesign/Design";
 const Products = () => {
-  const { id } = useParams();
-  console.log(id);
-  const [maxPrice, setMaxPrice] = useState(0);
+  const [category, setCategory] = useState(null);
+  const [query, setQuery] = useState("");
+  const [selectedInput, setSelectedInput] = useState(null);
+
+  //filter typed input
+  const filteredItems = products.filter(
+    (product) => product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  );
+
+  //filter radio selector
+  const handleMakeChange = (e) => {
+    setCategory(e.target.value);
+    console.log(e.target.value);
+    console.log(selectedInput);
+
+    setSelectedInput(e.target.value === selectedInput ? null : e.target.value);
+  };
+
+  const handleConditionChange = (e) => {
+    setCategory(e.target.value);
+    setSelectedInput(e.target.value === selectedInput ? null : e.target.value);
+  };
+
+  const handleColorChange = (e) => {
+    setCategory(e.target.value);
+    setSelectedInput(e.target.value === selectedInput ? null : e.target.value);
+  };
+
+  const handleQueryChange = (e) => {
+    setQuery(e.target.value);
+  };
+  // const handleInputSelect = (e) => {
+
+  // };
+
+  const handleChange = (products, selected, query) => {
+    let filteredProducts = products;
+    if (query) {
+      filteredProducts = filteredItems;
+    }
+    if (selected) {
+      filteredProducts = filteredProducts.filter(
+        (item) =>
+          item.price === selected ||
+          item.color === selected ||
+          item.make === selected ||
+          item.condition === selected
+      );
+    }
+    return filteredProducts;
+  };
+
+  const result = handleChange(products, category, query);
+  console.log(result);
   return (
-    <div className="products">
-      <div className="cat-left">
-        <div className="input-container">
-          <h2>Sort by Models</h2>
-          <div className="inputItems">
-            <input type="checkbox" value={1} id="1" />
-            <label htmlFor="1">mercedes Benz</label>
-          </div>
-          <div className="inputItems">
-            <input type="checkbox" value={2} id="2" />
-            <label htmlFor="2">toyota</label>
-          </div>
-          <div className="inputItems">
-            <input type="checkbox" value={3} id="3" />
-            <label htmlFor="3">nissan</label>
-          </div>
-          <div className="inputItems">
-            <input type="checkbox" value={4} id="4" />
-            <label htmlFor="4">bmw</label>
-          </div>
+    <div className="products-wrapper">
+      <Design />
+      <div className="products">
+        <div className="cat-left">
+          <Input
+            handleConditionChange={handleConditionChange}
+            handleColorChange={handleColorChange}
+            handleMakeChange={handleMakeChange}
+            selectedInput={selectedInput}
+          />
         </div>
-
-        <div className="sort-container">
-          <div className="sort-price">
-            <h2>Filter by price</h2>
-            <div className="inputItems">
-              <span>${0}</span>
-              <input
-                type="range"
-                min={0}
-                max={100000}
-                onChange={(e) => setMaxPrice(e.target.value)}
-              />
-              <span>${maxPrice}</span>
-            </div>
-          </div>
+        <div className="cat-right">
+          <h3>explore our affordable and durable cars</h3>
+          <SearchBar handleQueryChange={handleQueryChange} query={query} />
+          <ProductCards products={result} />
         </div>
-      </div>
-
-      <div className="cat-right">
-        <Lists id={id} maxPrice={maxPrice} />
       </div>
     </div>
   );

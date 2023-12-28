@@ -1,0 +1,29 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 20px;
+  width: 200px;
+  height: 30px;
+  padding: 4px 10px;
+  border-top: 1px solid grey;
+  box-shadow: 0 1px 0 grey;
+}
+.search-bar:hover {
+  border-top: 2px solid grey;
+  box-shadow: 0 2.3px 0 #2879fe;
+}
+.search-bar input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.search-bar i {
+  color: royalblue;
+  margin-right: 5px;
+}
+.search-bar input:focus {
+  outline: none;
+  caret-color: red;
+}

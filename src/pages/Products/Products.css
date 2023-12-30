@@ -7,19 +7,18 @@
   justify-content: space-between;
   margin: 50px 0 80px;
   padding: 0 3%;
-  gap: 20px;
   position: relative;
 }
 .cat-left {
   flex-basis: 10%;
-  height: 100px;
+  height: 200px;
   color: rgb(111, 108, 108);
   position: sticky;
+  margin-bottom: 300px;
   top: 80px;
-  margin-bottom: 280px;
 }
 .cat-right {
-  flex-basis: 87%;
+  flex-basis: 85%;
 }
 
 .cat-right h3 {
@@ -28,11 +27,12 @@
   margin-bottom: 10px;
 }
 @media (max-width: 768px) {
-  .cat-right {
-    flex-basis: 87%;
-  }
   .cat-left {
-    margin-bottom: 400px;
+    flex-basis: 10%;
+    margin-bottom: 300px;
     top: 100px;
+  }
+  .cat-right {
+    flex-basis: 70%;
   }
 }

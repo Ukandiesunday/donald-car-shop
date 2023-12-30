@@ -61,7 +61,7 @@
 }
 .subtotal {
   display: flex;
-  justify-content: space-between;
+  gap: 120px;
   margin: 10px 0;
 }
 .cart-modal button {

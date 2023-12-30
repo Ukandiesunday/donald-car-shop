@@ -18,6 +18,9 @@
   font-size: 30px;
   font-weight: 600;
   text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .navbar {
   height: 75px;

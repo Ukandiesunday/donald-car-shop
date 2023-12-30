@@ -20,7 +20,8 @@
 .sort-color h2 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: rgb(97, 93, 93);
+  color: rgb(78, 73, 73);
+  /* color: #2879fe; */
 }
 
 .input-container label,

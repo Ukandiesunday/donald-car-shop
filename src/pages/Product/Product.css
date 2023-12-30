@@ -1,32 +1,30 @@
 .product {
   display: flex;
-  margin-top: 100px;
+  margin: 80px 0 50px;
   gap: 20px;
   padding: 3%;
 }
 
 .product-left {
-  flex-basis: 70%;
+  flex-basis: 60%;
 }
 .product-left h2,
 .product-right h2 {
   color: rgb(111, 108, 108);
-  font-size: 20px;
+  font-size: 22px;
   text-wrap: nowrap;
   text-transform: capitalize;
 }
 
 .img {
-  overflow: hidden;
+  width: 100%;
   border-radius: 3px;
+  overflow: hidden;
 }
-@media (max-width: 768px) {
-  .img {
-    margin-top: 5px;
-  }
-}
+
 img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -37,10 +35,10 @@ img {
 }
 
 .product-right {
-  flex-basis: 25%;
+  flex-basis: 30%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   margin-top: 20px;
 }
 .cart-price {
@@ -51,15 +49,19 @@ img {
 .amt-container {
   font-size: 18px;
   font-weight: 500;
+  display: flex;
+  gap: 20px;
 }
 .desc-2 {
   font-size: 14px;
   font-weight: 400;
   color: rgba(111, 108, 108);
 }
-.amt-container span {
-  padding: 3px;
+.desc-2 h4 {
+  margin-bottom: 5px;
+  font-weight: 400;
 }
+
 .cart-btn {
   border: 0;
   cursor: pointer;
@@ -68,7 +70,9 @@ img {
   background: #2879fe;
   transition: all 0.5s;
 }
-
+.cart-btn i {
+  color: whitesmoke;
+}
 .cart-btn:hover {
   background-color: #6c9ce9;
   outline: 2px solid #2879fe;
@@ -77,7 +81,7 @@ img {
   width: 200px;
   height: 30px;
   background-color: #2879fe;
-  margin-top: 10px;
+  margin-top: 4px;
   color: white;
   border-radius: 4px;
   border: 0;
@@ -97,4 +101,23 @@ img {
   color: #2879fe;
   cursor: pointer;
   padding: 5px;
+}
+@media (max-width: 768px) {
+  .img {
+    margin-top: 5px;
+  }
+  .product {
+    flex-wrap: wrap;
+  }
+  .product-left {
+    flex-basis: 100%;
+  }
+  .product-left h2 {
+    padding: 5px 0px;
+    text-wrap: wrap;
+  }
+  .product-right {
+    flex-basis: 100%;
+    margin-top: 2px;
+  }
 }

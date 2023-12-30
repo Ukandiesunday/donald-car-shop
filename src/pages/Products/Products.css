@@ -16,22 +16,23 @@
   color: rgb(111, 108, 108);
   position: sticky;
   top: 80px;
-  margin-bottom: 240px;
+  margin-bottom: 280px;
 }
 .cat-right {
-  flex-basis: 90%;
+  flex-basis: 87%;
 }
 
 .cat-right h3 {
-  color: rgb(97, 93, 93);
+  color: #2879fe;
   text-transform: capitalize;
   margin-bottom: 10px;
 }
-/* @media (max-width: 768px) {
-  .cat-left {
-    flex: 1;
-  }
+@media (max-width: 768px) {
   .cat-right {
-    flex: 4;
+    flex-basis: 87%;
   }
-} */
+  .cat-left {
+    margin-bottom: 400px;
+    top: 100px;
+  }
+}

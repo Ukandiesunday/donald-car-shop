@@ -31,7 +31,10 @@ const Footer = () => {
         <div className="row2">
           <h2>news</h2>
           <div className="logo">
-            <img src="" alt="" />
+            <img
+              src="https://cars.usnews.com/static-atlas/assets/img/usn-logo-large.svg"
+              alt=""
+            />
           </div>
         </div>
       </div>

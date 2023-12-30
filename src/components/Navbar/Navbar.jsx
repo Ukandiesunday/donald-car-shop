@@ -2,9 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import Cart from "../Cart/Cart";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { total } = useSelector((state) => state.cart);
+  console.log(total);
   const navItems = [
     { path: "/home", link: "Home" },
     { path: "/products/:id", link: "Cars" },
@@ -34,10 +37,12 @@ const Navbar = () => {
         </Link>
         <div className="right-nav">
           <span className="user">login</span>
-          <span className="cart" onClick={() => setOpen((prev) => !prev)}>
-            <i className="ri-shopping-cart-2-line"></i>
-            <span className="cart-amount">10</span>
-          </span>
+          <Link className="link" to="/cart">
+            <span className="cart" onClick={() => setCartOpen(true)}>
+              <i className="ri-shopping-cart-2-line"></i>
+              <span className="cart-amount">{total}</span>
+            </span>
+          </Link>
         </div>
         <div
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -50,7 +55,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {open && <Cart />}
+      {cartOpen && <Cart />}
       <div className={`nav ${isMenuOpen ? "" : "close-menu"}`}>
         <ul>
           {navItems.map(({ path, link }) => (

@@ -1,0 +1,31 @@
+.modal {
+  position: absolute;
+  z-index: 999;
+  margin: 30px auto;
+  background-color: royalblue;
+  color: whitesmoke;
+  bottom: 20px;
+  right: 10px;
+  padding: 20px 10px;
+  text-align: center;
+}
+.modal-btn {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px 0;
+}
+.modal-container p {
+  margin: 7px;
+  text-transform: capitalize;
+}
+.modal-btn button {
+  cursor: pointer;
+  border: 0;
+  padding: 4px;
+  background-color: rgb(230, 219, 219);
+  color: rgb(73, 73, 199);
+  font-size: 18px;
+}

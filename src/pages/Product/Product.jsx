@@ -1,13 +1,27 @@
 import "./Product.css";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { products } from "../../assets/data/data";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, decrease } from "../../Redux/cartReducer";
+
 const Product = () => {
-  const [amount, setAmount] = useState(0);
+  const dispatch = useDispatch();
   const { id } = useParams();
+
   const { title, img, desc, price, condition, make } = products.find(
     (item) => item.id === id
   );
+  //To send same single product items to payload
+  const cartItems = {
+    title,
+    img,
+    price,
+    condition,
+    make,
+    id,
+    quantity: 1,
+    total: 0,
+  };
 
   return (
     <div className="product">
@@ -17,7 +31,7 @@ const Product = () => {
         </h2>
         <div className="product-center">
           <div className="img">
-            <img src={img} />
+            <img src={img} alt="" />
           </div>
         </div>
       </div>
@@ -28,23 +42,29 @@ const Product = () => {
         <div className="amt-container">
           <button
             className="cart-btn"
-            onClick={() => setAmount((prev) => (prev === 1 ? 1 : prev - 1))}
+            onClick={() => dispatch(decrease(cartItems))}
           >
             <i className="ri-subtract-line"></i>
           </button>
-          <span>{amount}</span>
+
+          <span>{}</span>
           <button
             className="cart-btn"
-            onClick={() => setAmount((prev) => prev + 1)}
+            onClick={() => dispatch(addToCart(cartItems))}
           >
             <i className="ri-add-fill"></i>
           </button>
         </div>
-
-        <button className="add-to-cart">
+        <button
+          className="add-to-cart"
+          onClick={() => dispatch(addToCart(cartItems))}
+        >
           <i className="ri-shopping-cart-2-line"></i>
           ADD TO CART
         </button>
+        <Link className="link" to="/products/:id">
+          Continue Shopping
+        </Link>
         <div className="wishlist">
           <span>
             <i className="ri-hearts-line"></i>ADD TO WISHLIST

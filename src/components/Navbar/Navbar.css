@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
-  background-color: rgb(25, 25, 62);
+  /* background-color: rgb(25, 25, 62); */
+  background-color: white;
 }
 .active {
   text-decoration: none;
@@ -39,22 +40,21 @@ ul li {
   font-size: 18px;
   text-wrap: nowrap;
   cursor: pointer;
-  color: rgb(202, 202, 212);
+  color: white;
   background: rgb(185, 101, 101);
   padding: 4px 10px;
   border-radius: 20px;
 }
-.search-icon {
-  color: rgb(202, 202, 212);
-  font-size: 20px;
-  cursor: pointer;
-}
+
 .cart {
-  font-size: 22px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 10px;
   position: relative;
   cursor: pointer;
-  color: rgb(202, 202, 212);
+  color: rgb(89, 87, 87);
 }
 .cart-amount {
   position: absolute;
@@ -62,7 +62,7 @@ ul li {
   flex-shrink: 1;
   align-items: center;
   justify-content: center;
-  top: -22px;
+  top: -26px;
   left: 0;
   bottom: 0;
   right: -13px;
@@ -139,7 +139,7 @@ ul li {
     display: block;
     font-size: 25px;
     font-weight: 600;
-    color: rgb(202, 202, 212);
+    color: rgb(89, 87, 87);
     margin-right: 10px;
   }
 }

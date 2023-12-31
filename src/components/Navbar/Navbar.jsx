@@ -70,7 +70,11 @@ const Navbar = () => {
               </NavLink>
             </li>
           ))}
-          <Link to="/login" className="link">
+          <Link
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            to="/login"
+            className="link"
+          >
             <span className="user2 user">Login</span>
           </Link>
         </ul>

@@ -30,7 +30,7 @@
 @media (max-width: 768px) {
   .cat-left {
     flex-basis: 10%;
-    margin-bottom: 300px;
+    margin-bottom: 400px;
     top: 100px;
   }
   .cat-right h3 {

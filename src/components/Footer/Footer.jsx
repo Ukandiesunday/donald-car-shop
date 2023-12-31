@@ -20,7 +20,7 @@ const Footer = () => {
       </div>
       <div className="foot-bottom">
         <div className="row1">
-          <h2>follow us</h2>
+          <h2 className="h2">follow us</h2>
           <div>
             <i className="ri-facebook-box-fill sos-icon"></i>
             <i className="ri-instagram-fill sos-icon"></i>
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="row2">
-          <h2>news</h2>
+          <h2 className="h2">news</h2>
           <div className="logo">
             <img
               src="https://cars.usnews.com/static-atlas/assets/img/usn-logo-large.svg"

@@ -12,7 +12,7 @@
 .cat-left {
   flex-basis: 10%;
   height: 200px;
-  color: rgb(111, 108, 108);
+  color: rgb(81, 75, 75);
   position: sticky;
   margin-bottom: 300px;
   top: 80px;
@@ -22,15 +22,19 @@
 }
 
 .cat-right h3 {
-  color: #2879fe;
+  color: black;
   text-transform: capitalize;
   margin-bottom: 10px;
+  font-size: 30px;
 }
 @media (max-width: 768px) {
   .cat-left {
     flex-basis: 10%;
     margin-bottom: 300px;
     top: 100px;
+  }
+  .cat-right h3 {
+    font-size: 20px;
   }
   .cat-right {
     flex-basis: 70%;

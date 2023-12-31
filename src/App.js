@@ -12,6 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { calculate } from "./Redux/cartReducer";
 import Cart from "./components/Cart/Cart";
+import Register from "./components/Form/Register";
+import Login from "./components/Form/Login";
 
 const Layout = () => {
   return (
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
       },
       {
@@ -51,6 +53,15 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },

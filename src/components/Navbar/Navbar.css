@@ -5,16 +5,18 @@
   padding: 15px 5%;
   /* background-color: rgb(25, 25, 62); */
   background-color: white;
+  box-shadow: 0px 1px 0 rgba(186, 182, 182, 0.4);
 }
 .active {
   text-decoration: none;
   padding: 4px 10px;
-  background: linear-gradient(90deg, rgb(185, 101, 101), blue);
-  color: rgb(202, 202, 212);
+  /* background: linear-gradient(90deg, rgb(185, 101, 101), blue); */
   border-radius: 20px;
+  color: rgb(59, 56, 56);
+  text-decoration: underline;
 }
 .logo {
-  color: #2879fe;
+  color: #00c1ae;
   font-size: 30px;
   font-weight: 600;
   text-wrap: nowrap;
@@ -32,7 +34,7 @@
   z-index: 2;
 }
 ul li {
-  color: #2879fe;
+  color: rgb(59, 56, 56);
 }
 .right-nav {
   display: flex;
@@ -44,8 +46,8 @@ ul li {
   text-wrap: nowrap;
   cursor: pointer;
   color: white;
-  background: rgb(185, 101, 101);
-  padding: 4px 10px;
+  background: linear-gradient(100deg, rgb(69, 220, 205), rgb(22, 174, 159));
+  padding: 5px 10px;
   border-radius: 20px;
 }
 
@@ -72,11 +74,7 @@ ul li {
   padding: 10px;
   font-weight: 600;
   font-size: 18px;
-  color: #2879fe;
-}
-.row1 h2,
-.row2 h2 {
-  color: #2879fe;
+  color: #00c1ae;
 }
 
 .pages span {
@@ -87,7 +85,7 @@ ul {
   list-style: none;
 }
 ul li {
-  color: black;
+  color: rgb(89, 87, 87);
   list-style: none;
   margin-right: 15px;
   font-size: 18px;
@@ -144,5 +142,8 @@ ul li {
     font-weight: 600;
     color: rgb(89, 87, 87);
     margin-right: 10px;
+  }
+  .nav-container {
+    padding-left: 10%;
   }
 }

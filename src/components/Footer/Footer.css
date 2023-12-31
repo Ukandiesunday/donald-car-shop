@@ -1,7 +1,7 @@
 .footer {
-  padding: 40px 0 25px 0;
-  background-color: white;
-  color: rgb(111, 108, 108);
+  padding: 25px 0 25px 0;
+  background-color: #00c1ae;
+  color: black;
 }
 
 .footer-top-container {
@@ -11,14 +11,19 @@
   font-size: 15px;
   margin-bottom: 15px;
 }
+.h2 {
+  color: black;
+}
 .logo {
   width: 70px;
   height: 20px;
 }
 h2 {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
   text-transform: capitalize;
   margin-bottom: 3px;
+  color: black;
 }
 .foot-bottom {
   margin-top: 10px;
@@ -26,15 +31,19 @@ h2 {
   justify-content: space-evenly;
 }
 hr {
-  border: 1px solid grey;
+  border: 1px solid rgb(148, 147, 147);
   display: block;
   margin: 0 auto;
-  width: 95%;
+  width: 100%;
 }
 
 .row1 i {
   font-size: 20px;
   margin-right: 8px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: white;
 }
 .copy {
   display: flex;
@@ -49,7 +58,7 @@ hr {
 }
 @media (max-width: 768px) {
   .footer {
-    padding-top: 0;
+    padding-top: 20px;
   }
   .copy {
     text-align: center;

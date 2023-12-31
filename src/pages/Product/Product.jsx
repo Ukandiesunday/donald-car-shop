@@ -1,7 +1,7 @@
 import "./Product.css";
 import { useParams, Link } from "react-router-dom";
 import { products } from "../../assets/data/data";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart, decrease } from "../../Redux/cartReducer";
 
 const Product = () => {
@@ -62,7 +62,7 @@ const Product = () => {
           <i className="ri-shopping-cart-2-line"></i>
           ADD TO CART
         </button>
-        <Link className="link" to="/products/:id">
+        <Link className="link link2" to="/products/:id">
           Continue Shopping
         </Link>
         <div className="wishlist">

@@ -4,7 +4,6 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Input from "../../components/Input/Input";
 import { products } from "../../assets/data/data";
 import { useState } from "react";
-import Design from "../../components/CarDesign/Design";
 const Products = () => {
   const [category, setCategory] = useState(null);
   const [query, setQuery] = useState("");
@@ -18,8 +17,6 @@ const Products = () => {
   //filter radio selector
   const handleMakeChange = (e) => {
     setCategory(e.target.value);
-    console.log(e.target.value);
-    console.log(selectedInput);
 
     setSelectedInput(e.target.value === selectedInput ? null : e.target.value);
   };
@@ -37,9 +34,6 @@ const Products = () => {
   const handleQueryChange = (e) => {
     setQuery(e.target.value);
   };
-  // const handleInputSelect = (e) => {
-
-  // };
 
   const handleChange = (products, selected, query) => {
     let filteredProducts = products;
@@ -59,10 +53,9 @@ const Products = () => {
   };
 
   const result = handleChange(products, category, query);
-  console.log(result);
+
   return (
     <div className="products-wrapper">
-      <Design />
       <div className="products">
         <div className="cat-left">
           <Input

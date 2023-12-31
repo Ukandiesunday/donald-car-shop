@@ -14,8 +14,13 @@ body {
   text-decoration: none;
   margin-right: 10px;
   font-size: 18px;
-  color: #2879fe;
+  color: rgb(59, 56, 56);
+
   cursor: pointer;
+}
+.link2 {
+  color: #00c1ae;
+  font-weight: 500;
 }
 @media (max-width: 768px) {
   h2 {

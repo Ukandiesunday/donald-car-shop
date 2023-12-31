@@ -16,7 +16,7 @@ const Cart = ({}) => {
       <div className="empty">
         <h1>Your cart is empty!</h1>
         <h3>Browse our products and discover our best deals</h3>
-        <Link className="link" to="/products/id">
+        <Link className="link link2" to="/products/id">
           START SHOPPING
         </Link>
       </div>

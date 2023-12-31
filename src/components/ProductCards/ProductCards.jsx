@@ -4,7 +4,6 @@ import React from "react";
 
 const ProductCards = ({ products }) => {
   const filteredProducts = products;
-  console.log(filteredProducts);
   return (
     <div>
       <div className="cards">
@@ -20,8 +19,8 @@ const ProductCards = ({ products }) => {
               </div>
               <div className="details">
                 <div className="title">{product.title}</div>
+                <div className="condition">{product.condition}</div>
                 <div className="price">${product.price}</div>
-                <p>shop now</p>
               </div>
             </div>
           </Link>

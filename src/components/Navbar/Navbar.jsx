@@ -7,9 +7,9 @@ const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { total } = useSelector((state) => state.cart);
-  console.log(total);
+
   const navItems = [
-    { path: "/home", link: "Home" },
+    { path: "/", link: "Home" },
     { path: "/products/:id", link: "Cars" },
     { path: "/about", link: "About" },
     { path: "/blog", link: "Blog" },
@@ -32,11 +32,13 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <Link className="link" to="/home">
+        <Link className="link" to="/">
           <div className="logo">carStore</div>
         </Link>
         <div className="right-nav">
-          <span className="user">login</span>
+          <Link to="/login" className="link">
+            <span className="user">Login</span>
+          </Link>
           <Link className="link" to="/cart">
             <span className="cart" onClick={() => setCartOpen(true)}>
               <i className="ri-shopping-cart-2-line"></i>
@@ -59,7 +61,7 @@ const Navbar = () => {
       <div className={`nav ${isMenuOpen ? "" : "close-menu"}`}>
         <ul>
           {navItems.map(({ path, link }) => (
-            <li key={path}>
+            <li key={path} onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <NavLink
                 className={({ isActive }) => (isActive ? "active" : "link")}
                 to={path}
@@ -68,7 +70,9 @@ const Navbar = () => {
               </NavLink>
             </li>
           ))}
-          <span className="user user2">login</span>
+          <Link to="/login" className="link">
+            <span className="user2 user">Login</span>
+          </Link>
         </ul>
       </div>
     </div>

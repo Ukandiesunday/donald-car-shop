@@ -12,7 +12,6 @@ const Navbar = () => {
     { path: "/", link: "Home" },
     { path: "/products/:id", link: "Cars" },
     { path: "/about", link: "About" },
-    { path: "/blog", link: "Blog" },
     { path: "/contact", link: "Contact" },
   ];
   return (

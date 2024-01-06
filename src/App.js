@@ -7,7 +7,6 @@ import Footer from "./components/Footer/Footer";
 import "remixicon/fonts/remixicon.css";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
-import Blog from "./pages/Blog/Blog";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { calculate } from "./Redux/cartReducer";
@@ -47,10 +46,6 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/blog",
-        element: <Blog />,
-      },
-      {
         path: "/contact",
         element: <Contact />,
       },
@@ -76,7 +71,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(calculate());
-  }, [products]);
+  }, [products, dispatch]);
   return (
     <div className="App">
       <RouterProvider router={router} />

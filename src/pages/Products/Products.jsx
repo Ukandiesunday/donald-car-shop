@@ -31,9 +31,7 @@ const Products = () => {
     setSelectedInput(e.target.value === selectedInput ? null : e.target.value);
   };
 
-  const handleQueryChange = (e) => {
-    setQuery(e.target.value);
-  };
+  const handleQueryChange = () => {};
 
   const handleChange = (products, selected, query) => {
     let filteredProducts = products;
@@ -49,6 +47,7 @@ const Products = () => {
           item.condition === selected
       );
     }
+
     return filteredProducts;
   };
 
@@ -67,7 +66,11 @@ const Products = () => {
         </div>
         <div className="cat-right">
           <h3>explore our affordable and durable cars</h3>
-          <SearchBar handleQueryChange={handleQueryChange} query={query} />
+          <SearchBar
+            handleQueryChange={handleQueryChange}
+            query={query}
+            setQuery={setQuery}
+          />
           <ProductCards products={result} />
         </div>
       </div>

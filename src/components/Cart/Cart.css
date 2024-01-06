@@ -5,15 +5,20 @@
   padding: 10px;
   background-color: #fcfdfe;
   border-radius: 4px;
-  color: rgb(96, 92, 92);
+  color: black;
 }
 .cart-modal h1 {
+  margin-bottom: 10px;
   font-size: 25px;
+  color: rgb(22, 174, 159);
 }
 .cart-desc {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.cart-desc p {
+  font-size: 14px;
 }
 .empty {
   padding: 0 5%;
@@ -31,7 +36,7 @@
 .cart-modal-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 .cart-img {
   width: 200px;
@@ -47,7 +52,7 @@
 .info-container {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
 }
 .sub-info {
   display: flex;
@@ -80,7 +85,7 @@
 }
 
 .checkout-btn {
-  background: #1e68df;
+  background: rgb(22, 174, 159);
   color: white;
 }
 .clear-cart {

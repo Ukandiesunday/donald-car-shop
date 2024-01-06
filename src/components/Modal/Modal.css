@@ -2,8 +2,8 @@
   position: absolute;
   z-index: 999;
   margin: 30px auto;
-  background-color: royalblue;
-  color: whitesmoke;
+  background-color: #00c1ae;
+  color: black;
   bottom: 20px;
   right: 10px;
   padding: 20px 10px;
@@ -26,6 +26,6 @@
   border: 0;
   padding: 4px;
   background-color: rgb(230, 219, 219);
-  color: rgb(73, 73, 199);
+  color: black;
   font-size: 18px;
 }

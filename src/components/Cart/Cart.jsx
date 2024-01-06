@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { clearCart, removeItem } from "../../Redux/cartReducer";
+import { removeItem } from "../../Redux/cartReducer";
 import "./Cart.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "../Modal/Modal";
-import { openModal, openModel } from "../Modal/modalSlice";
+import { openModal } from "../Modal/modalSlice";
 const Cart = ({}) => {
   const { products, amount } = useSelector((state) => state.cart);
   const { isModalOpen } = useSelector((state) => state.modal);
@@ -25,7 +25,7 @@ const Cart = ({}) => {
   return (
     <div className="cart-modal">
       <h1>Thanks for your patronage</h1>
-      <h2>Products in your Cart</h2>
+      <h3>Products in your Cart</h3>
       <div className="cart-modal-container">
         {products?.map((item) => {
           const { id, img, title, desc, price, quantity } = item;
@@ -37,7 +37,7 @@ const Cart = ({}) => {
               <div className="info">
                 <div className="cart-desc">
                   <h4>{title}</h4>
-                  <p>{price}</p>
+                  <p>${price}</p>
                   <p>Quantity: {quantity}</p>
                 </div>
 
@@ -63,7 +63,7 @@ const Cart = ({}) => {
           <button className="clear-cart" onClick={() => dispatch(openModal())}>
             Clear cart
           </button>
-          <Link className="link" to="/products/:id">
+          <Link className="link link2" to="/products/:id">
             Go Back
           </Link>
         </div>

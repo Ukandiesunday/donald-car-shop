@@ -1,3 +1,68 @@
 .about {
-  margin: 150px auto;
+  margin: 80px auto;
+}
+.abt-img {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+.abt-img img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+}
+.abt-img h4 {
+  text-transform: capitalize;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  bottom: 50px;
+  left: 40%;
+  z-index: 3;
+}
+.about-left {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.div1 {
+  margin: 30px 0;
+  flex-basis: 70%;
+  padding: 0 3%;
+}
+.p {
+  margin: 15px 0;
+}
+.div {
+  flex-basis: 25%;
+  margin-top: -50px;
+}
+.about-right {
+  text-align: center;
+  margin: 30px auto;
+  padding: 0 2%;
+}
+@media (max-width: 768px) {
+  .about-right {
+    overflow-x: scroll;
+  }
+}
+.abt-imgs {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+.abt-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  width: 400px;
+  font-weight: 500;
+}
+.abt-items i {
+  font-size: 20px;
+  color: gold;
 }

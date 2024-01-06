@@ -13,7 +13,7 @@
 }
 @media (max-width: 768px) {
   .search-bar {
-    width: 100%;
+    width: 95%;
   }
 }
 .search-bar:hover {

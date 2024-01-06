@@ -1,8 +1,9 @@
 .cart-modal {
+  padding: 30px 5% 0 5%;
   position: relative;
   margin: 50px auto;
   width: fit-content;
-  padding-top: 30px;
+
   background-color: #fcfdfe;
   border-radius: 4px;
   color: black;
@@ -96,4 +97,9 @@
 }
 .clear-cart:hover {
   background: #d7dae0;
+}
+@media (max-width: 768px) {
+  .cart-modal {
+    padding: 30px 5% 0 5%;
+  }
 }

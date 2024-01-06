@@ -42,11 +42,7 @@
   margin: 30px auto;
   padding: 0 2%;
 }
-@media (max-width: 768px) {
-  .about-right {
-    overflow-x: scroll;
-  }
-}
+
 .abt-imgs {
   display: flex;
   align-items: center;
@@ -65,4 +61,15 @@
 .abt-items i {
   font-size: 20px;
   color: gold;
+}
+@media (max-width: 768px) {
+  .about-right {
+    overflow-x: scroll;
+  }
+  .div {
+    display: none;
+  }
+  .div1 {
+    flex-basis: 90%;
+  }
 }

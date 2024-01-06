@@ -6,7 +6,7 @@ const Subscription = () => {
       <h2 style={{ fontSize: "23px" }}>Subscribe to our news letter</h2>
       <div className="item" style={{ display: "flex", alignItems: "center" }}>
         <input
-          style={{ width: "100%" }}
+          style={{ width: "90%" }}
           type="text"
           placeholder="Your Email..."
         />

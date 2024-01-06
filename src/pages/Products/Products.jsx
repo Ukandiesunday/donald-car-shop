@@ -4,7 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Input from "../../components/Input/Input";
 import { products } from "../../assets/data/data";
 import { useState } from "react";
-const Products = () => {
+const Products = ({ myElementRef }) => {
   const [category, setCategory] = useState(null);
   const [query, setQuery] = useState("");
   const [selectedInput, setSelectedInput] = useState(null);
@@ -64,7 +64,7 @@ const Products = () => {
             selectedInput={selectedInput}
           />
         </div>
-        <div className="cat-right">
+        <div className="cat-right" ref={myElementRef}>
           <h3>explore our affordable and durable cars</h3>
           <SearchBar
             handleQueryChange={handleQueryChange}

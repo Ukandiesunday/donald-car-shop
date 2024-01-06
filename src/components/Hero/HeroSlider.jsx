@@ -1,10 +1,9 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./HeroSlider.css";
 
-const HeroSlider = () => {
+const HeroSlider = ({ handleScrollBottom }) => {
   const settings = {
     autoplay: true,
     autoplaySpeed: 4000,
@@ -15,6 +14,7 @@ const HeroSlider = () => {
     fade: true,
     pauseOnHover: false,
   };
+
   return (
     <div className="slider-wrapper">
       <Slider className="slider" {...settings}>
@@ -40,7 +40,7 @@ const HeroSlider = () => {
       <p className="hero-p">
         unleash durability and tech prowess in every drive with our cars
       </p>
-      <div className="hero-btn-container">
+      <div className="hero-btn-container" onClick={handleScrollBottom}>
         <button className="hero-btn">Get Started</button>
         <span className="hero-span"></span>
       </div>

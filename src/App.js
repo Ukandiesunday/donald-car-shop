@@ -55,14 +55,14 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
         path: "/login",
         element: <Login />,
       },
     ],
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
   },
 ]);
 

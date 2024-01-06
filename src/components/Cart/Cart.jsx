@@ -5,7 +5,7 @@ import "./Cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "../Modal/Modal";
 import { openModal } from "../Modal/modalSlice";
-const Cart = ({}) => {
+const Cart = () => {
   const { products, amount } = useSelector((state) => state.cart);
   const { isModalOpen } = useSelector((state) => state.modal);
 

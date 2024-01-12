@@ -12,7 +12,7 @@
   border-radius: 50px 50px 0 0;
 }
 .review h1 {
-  margin-bottom: 20px;
+  margin: 5px 0 20px;
   text-align: center;
   text-transform: capitalize;
 }
@@ -45,6 +45,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.name {
+  font-weight: 500;
 }
 .slide-icons i {
   padding: 3px;

@@ -11,9 +11,9 @@ const Reviews = () => {
         <div className="slide slide2">
           <div className="rev-item">
             <div>
-              <img className="review-img" src={emediong} alt="emediong image" />
+              <img className="review-img" src={emediong} alt="emediong" />
             </div>
-            <p>Mr. Godwin</p>
+            <p className="name">Mr. Godwin</p>
             <p>PortHartcourt</p>
             <div className="rev-icons">
               <i className="ri-star-fill"></i>
@@ -31,9 +31,9 @@ const Reviews = () => {
 
           <div className="rev-item">
             <div>
-              <img className="review-img" src={lola} alt="lola image" />
+              <img className="review-img" src={lola} alt="lola" />
             </div>
-            <p>Mrs. Lola</p>
+            <p className="name">Mrs. Lola</p>
             <p>Lagos</p>
             <div className="rev-icons">
               <i className="ri-star-fill"></i>
@@ -49,9 +49,9 @@ const Reviews = () => {
           </div>
           <div className="rev-item">
             <div>
-              <img className="review-img" src={akpo} alt="akpo image" />
+              <img className="review-img" src={akpo} alt="akpo" />
             </div>
-            <p>Mr. Isaac</p>
+            <p className="name">Mr. Isaac</p>
             <p>Abuja</p>
             <div className="rev-icons">
               <i className="ri-star-fill"></i>

@@ -90,11 +90,7 @@ img {
   cursor: pointer;
   transition: all 0.5s;
 }
-.add-to-cart:hover {
-  background: linear-gradient(100deg, rgb(231, 241, 240), rgb(74, 217, 203));
-  border: 2px solid #00c1ae;
-  color: black;
-}
+
 .add-to-cart i {
   margin-right: 15px;
   font-size: 20px;

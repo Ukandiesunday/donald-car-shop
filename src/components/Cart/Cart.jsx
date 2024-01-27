@@ -58,13 +58,15 @@ const Cart = () => {
             <h4>Subtotal</h4>
             <span>${amount.toFixed(2)}</span>
           </div>
+
           <button className="checkout-btn">PROCEED TO CHECKOUT</button>
+          <span className="call">Call: +2349153678691</span>
           <br />
           <button className="clear-cart" onClick={() => dispatch(openModal())}>
             Clear cart
           </button>
           <Link className="link link2" to="/products/:id">
-            Go Back
+            Add More
           </Link>
         </div>
       </div>

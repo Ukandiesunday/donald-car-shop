@@ -62,6 +62,7 @@ const Product = () => {
               <i className="ri-add-fill"></i>
             </button>
           </div>
+
           <button
             className="add-to-cart"
             onClick={() => dispatch(addToCart(cartItems))}
@@ -69,18 +70,10 @@ const Product = () => {
             <i className="ri-shopping-cart-2-line"></i>
             ADD TO CART
           </button>
+          <span className="call">Call: +2349153678691</span>
           <Link className="link link2" to="/products/:id">
             Continue Shopping
           </Link>
-          <div className="wishlist">
-            <span>
-              <i className="ri-hearts-line"></i>ADD TO WISHLIST
-            </span>
-            <br />
-            <span>
-              <i className="ri-hand-heart-line"></i>ADD TO COMPARE
-            </span>
-          </div>
           <div className="desc-2">
             <h4>DESCRIPTION</h4>
             {desc}

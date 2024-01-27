@@ -95,12 +95,14 @@ img {
   margin-right: 15px;
   font-size: 20px;
 }
-.wishlist {
-  font-size: 13px;
+.call {
+  font-size: 18px;
+  font-weight: 600;
   color: #00c1ae;
-  cursor: pointer;
-  padding: 5px;
+  padding: 6px;
+  border-radius: 4px;
 }
+
 @media (max-width: 768px) {
   .img {
     margin-top: 5px;

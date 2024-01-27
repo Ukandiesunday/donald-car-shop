@@ -36,9 +36,9 @@ const Contact = () => {
   };
   return (
     <div className="contact-wrapper">
-      <h1>contact us for your car deals </h1>
       <div className="contact">
         <div className="contact-left">
+          <h1>contact us now </h1>
           <div className="contact-img-container">
             <img src={contact} alt="" />
           </div>
@@ -91,6 +91,14 @@ const Contact = () => {
                 <label htmlFor="Phone">Phone</label>
                 <input type="text" placeholder="Phone" {...register("phone")} />
                 <span>{errors.phone?.message}</span>
+              </div>
+              <div className="item">
+                <textarea
+                  name=""
+                  id="Message"
+                  rows="9"
+                  placeholder="Send a message...."
+                ></textarea>
               </div>
               <button type="submit">Submit</button>
             </form>

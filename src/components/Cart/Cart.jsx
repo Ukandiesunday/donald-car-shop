@@ -33,7 +33,7 @@ const Cart = () => {
           return (
             <div key={id} className="info-container">
               <div className="cart-img">
-                <img src={img} alt="benz car" />
+                <img src={img[0]} alt="benz car" />
               </div>
               <div className="info">
                 <div className="cart-desc">

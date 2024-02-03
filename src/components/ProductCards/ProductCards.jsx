@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 const ProductCards = ({ products }) => {
   const [currentPage, setCurrentPage] = useState(1);
+
   const pageSize = 5;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
@@ -24,8 +25,9 @@ const ProductCards = ({ products }) => {
           >
             <div className="item-container">
               <div className="img-wrapper">
-                <img className="img1" src={product.img} alt="cars" />
+                <img className="img1" src={product.img[0]} alt="cars" />
               </div>
+
               <div className="details">
                 <div className="title">{product.title}</div>
 

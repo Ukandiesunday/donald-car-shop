@@ -4,8 +4,11 @@ import { data } from "../../assets/data/data";
 import { useDispatch, useSelector } from "react-redux";
 import Reviews from "../../components/Reviews/Reviews";
 import { addToCart, decrease } from "../../Redux/cartReducer";
+import { useState } from "react";
 
 const Product = () => {
+  const [mainImg, setMainImg] = useState(0);
+  const [opacity, setOpacity] = useState(0);
   const dispatch = useDispatch();
   const { id } = useParams();
   const { products } = useSelector((state) => state?.cart);
@@ -26,6 +29,10 @@ const Product = () => {
     quantity: 1,
     total: 0,
   };
+  const handleImgChange = (index) => {
+    setMainImg(index);
+    setOpacity(index);
+  };
 
   return (
     <div>
@@ -36,7 +43,19 @@ const Product = () => {
           </h2>
           <div className="product-center">
             <div className="img">
-              <img src={img} alt="" />
+              <img src={img[mainImg]} alt="" />
+            </div>
+
+            <div className="clickable-img-container">
+              <div className="clickable-img ">
+                <img src={img[0]} alt="" onClick={() => handleImgChange(0)} />
+              </div>
+              <div className="clickable-img">
+                <img src={img[1]} alt="" onClick={() => handleImgChange(1)} />
+              </div>
+              <div className="clickable-img">
+                <img src={img[2]} alt="" onClick={() => handleImgChange(2)} />
+              </div>
             </div>
           </div>
         </div>

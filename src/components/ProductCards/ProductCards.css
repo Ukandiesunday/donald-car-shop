@@ -27,7 +27,7 @@
   margin: 5px 0;
 }
 .card-link {
-  box-shadow: 0 0 1px rgb(81, 77, 77);
+  border: 1px solid grey;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
@@ -58,12 +58,7 @@
   font-size: 17px;
   font-weight: 600;
 }
-/* .uses,
-.condition {
-  background-color: rgb(215, 215, 199);
-  padding-inline: 4px;
-  border-radius: 4px;
-} */
+
 .price {
   color: #1aa698;
   margin-top: 6px;

@@ -49,9 +49,9 @@ img {
   font-size: 18px;
 }
 .amt-container {
-  font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 .desc-2 {
@@ -67,18 +67,17 @@ img {
 .cart-btn {
   border: 0;
   cursor: pointer;
-  padding: 5px 9px;
+  padding: 4px 8px;
   border-radius: 4px;
-
+  border: 2px solid rgb(22, 174, 159);
   transition: all 0.5s;
 }
 .cart-btn i {
   color: black;
+  font-size: 16px;
+  font-weight: 600;
 }
-.cart-btn:hover {
-  background-color: #ebf2f7;
-  outline: 2px solid #ebf2f7;
-}
+
 .add-to-cart {
   width: 200px;
   height: 30px;

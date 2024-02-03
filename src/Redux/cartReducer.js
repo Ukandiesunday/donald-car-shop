@@ -25,6 +25,7 @@ const cartSlice = createSlice({
       if (item?.quantity === undefined) return;
       if (item.quantity === 0) return;
       item.quantity = item.quantity - 1;
+      state.products = state.products.filter((item) => item.quantity !== 0);
     },
     removeItem: (state, action) => {
       state.products = state.products.filter(

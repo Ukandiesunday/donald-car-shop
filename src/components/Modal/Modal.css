@@ -2,9 +2,11 @@
   position: absolute;
   z-index: 999;
   margin: 30px auto;
-  background-color: #00c1ae;
+  background-color: white;
+  border: 1px solid cyan;
   color: black;
   bottom: 20px;
+  font-weight: 600;
   right: 10px;
   padding: 20px 10px;
   text-align: center;
@@ -21,11 +23,16 @@
   margin: 7px;
   text-transform: capitalize;
 }
+.modal-container i {
+  color: red;
+  font-size: 30px;
+}
 .modal-btn button {
   cursor: pointer;
   border: 0;
-  padding: 4px;
-  background-color: rgb(230, 219, 219);
+  padding: 6px;
+  border: 1px solid cyan;
+  background-color: transparent;
   color: black;
   font-size: 18px;
 }

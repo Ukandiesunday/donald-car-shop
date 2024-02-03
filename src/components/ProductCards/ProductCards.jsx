@@ -28,7 +28,14 @@ const ProductCards = ({ products }) => {
               </div>
               <div className="details">
                 <div className="title">{product.title}</div>
-                <div className="condition">{product.condition}</div>
+
+                <div className="sub-details">
+                  <div className="condition">
+                    Condition: {product.condition}
+                  </div>
+                  <div className="uses">Uses: {product.oil}</div>
+                </div>
+                <div> Ranges Up To {product.autonomy} Miles</div>
                 <div className="price">${product.price}</div>
               </div>
             </div>

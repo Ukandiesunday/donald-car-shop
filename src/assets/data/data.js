@@ -1,4 +1,4 @@
-export const products = [
+export const data = [
   {
     id: "id4",
     title: "2022 Toyota Corolla Cross",

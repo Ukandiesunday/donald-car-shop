@@ -1,8 +1,7 @@
 .rev-wrapper {
   background-color: #00c1ae;
 
-  margin-bottom: 50px;
-  margin-top: 80px;
+  margin: 70px auto;
 }
 .review {
   width: 90%;
@@ -60,29 +59,29 @@
 .slide-icons i:hover {
   background: rgb(221, 231, 231);
 }
-@media (max-width: 768px) {
-  .slide {
-    width: 300vw;
-    padding: 0 100px;
-    transform: translateX(-110vw);
-    animation: slide 60s ease-in-out infinite;
-  }
 
-  @keyframes slide {
-    0% {
-      transform: translateX(1vw);
-    }
-    25% {
-      transform: translateX(-100vw);
-    }
-    30% {
-      transform: translateX(-150vw);
-    }
-    50% {
-      transform: translateX(-200vw);
-    }
-    100% {
-      transform: translateX(-120vw);
-    }
+.slide-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 20px;
+  width: 100px;
+}
+.slide {
+  display: flex;
+}
+.slide-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .correspondence .h2 {
+    margin-left: 0px;
+  }
+  .slide-item {
+    padding: 0 70px;
+    margin: 10px auto;
   }
 }

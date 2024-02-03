@@ -8,8 +8,11 @@ const Modal = ({}) => {
   return (
     <div className="modal">
       <div className="modal-container">
-        <p>This action is irreversible!</p>
-        <p>are you sure you want to proceed?</p>
+        <div>
+          <i className="ri-error-warning-line"></i>
+        </div>
+        <p>This action is not reversible!</p>
+        <p>are you sure you want to continue?</p>
       </div>
       <div className="modal-btn">
         <button
@@ -18,9 +21,9 @@ const Modal = ({}) => {
             dispatch(closeModal());
           }}
         >
-          Proceed
+          YES
         </button>
-        <button onClick={() => dispatch(closeModal())}>Cancel</button>
+        <button onClick={() => dispatch(closeModal())}>NO</button>
       </div>
     </div>
   );

@@ -1,16 +1,17 @@
 import "./Product.css";
 import { useParams, Link } from "react-router-dom";
-import { products } from "../../assets/data/data";
-import { useDispatch } from "react-redux";
+import { data } from "../../assets/data/data";
+import { useDispatch, useSelector } from "react-redux";
 import Reviews from "../../components/Reviews/Reviews";
 import { addToCart, decrease } from "../../Redux/cartReducer";
 
 const Product = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-
+  const { products } = useSelector((state) => state?.cart);
+  const searchItem = products.find((item) => item.id === id);
   const { title, img, desc, price, condition, make, color, autonomy, oil } =
-    products.find((item) => item.id === id);
+    data.find((item) => item.id === id);
   //To send same single product items to payload
   const cartItems = {
     title,
@@ -37,9 +38,6 @@ const Product = () => {
             <div className="img">
               <img src={img} alt="" />
             </div>
-            <p>Color: {color}</p>
-            <p>Uses: {oil}</p>
-            <p> RANGES UP TO {autonomy} MILES</p>
           </div>
         </div>
         <div className="product-right">
@@ -54,7 +52,9 @@ const Product = () => {
               <i className="ri-subtract-line"></i>
             </button>
 
-            <span>{}</span>
+            <span>
+              {searchItem?.quantity === undefined ? 0 : searchItem?.quantity}
+            </span>
             <button
               className="cart-btn"
               onClick={() => dispatch(addToCart(cartItems))}

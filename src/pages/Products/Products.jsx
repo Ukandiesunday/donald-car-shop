@@ -2,7 +2,7 @@ import "./Products.css";
 import ProductCards from "../../components/ProductCards/ProductCards";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Input from "../../components/Input/Input";
-import { products } from "../../assets/data/data";
+import { data } from "../../assets/data/data";
 import { useState } from "react";
 const Products = ({ myElementRef }) => {
   const [category, setCategory] = useState(null);
@@ -10,7 +10,7 @@ const Products = ({ myElementRef }) => {
   const [selectedInput, setSelectedInput] = useState(null);
 
   //filter typed input
-  const filteredItems = products.filter(
+  const filteredItems = data.filter(
     (product) => product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
   );
 
@@ -51,7 +51,7 @@ const Products = ({ myElementRef }) => {
     return filteredProducts;
   };
 
-  const result = handleChange(products, category, query);
+  const result = handleChange(data, category, query);
 
   return (
     <div className="products-wrapper">

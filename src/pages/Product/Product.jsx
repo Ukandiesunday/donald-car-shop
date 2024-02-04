@@ -5,10 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Reviews from "../../components/Reviews/Reviews";
 import { addToCart, decrease } from "../../Redux/cartReducer";
 import { useState } from "react";
+import RelatedCars from "../../components/RelatedCars/RelatedCars";
 
 const Product = () => {
   const [mainImg, setMainImg] = useState(0);
-  const [opacity, setOpacity] = useState(0);
+
   const dispatch = useDispatch();
   const { id } = useParams();
   const { products } = useSelector((state) => state?.cart);
@@ -31,7 +32,6 @@ const Product = () => {
   };
   const handleImgChange = (index) => {
     setMainImg(index);
-    setOpacity(index);
   };
 
   return (
@@ -99,7 +99,12 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <Reviews />
+      <div className="">
+        <RelatedCars make={make} data={data} />
+      </div>
+      <div>
+        <Reviews />
+      </div>
     </div>
   );
 };

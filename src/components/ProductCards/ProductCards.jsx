@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const ProductCards = ({ products }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pageSize = 8;
+  const pageSize = 6;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
   const paginatedProducts = products.slice(startIndex, endIndex);

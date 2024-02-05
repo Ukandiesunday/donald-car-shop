@@ -19,8 +19,8 @@ const Service = () => {
         </div>
         <h2>How It Works</h2>
 
-        <div className="serv-second-item-cont">
-          <div>
+        <div className="serv-item">
+          <div className="serv-second-item-cont">
             <div className="serv-img-cont2">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvw-YK89VGO74aiuR7eVCEkTrmlTSTV6CZRA&usqp=CAU"
@@ -35,9 +35,8 @@ const Service = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="serv-third-item-cont">
-          <div>
+
+          <div className="serv-third-item-cont">
             <div className="serv-img-cont2">
               <img
                 src="https://www.cars45.com/_ipx/_/how-it-works/how-it-works-2.png"

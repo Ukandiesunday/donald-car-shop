@@ -74,7 +74,7 @@
 @media (max-width: 768px) {
   .serv-second-item-cont,
   .serv-third-item-cont {
-    flex-basis: 80%;
+    flex-basis: 100%;
     margin: 0 auto;
   }
   .serv-second-item-cont {

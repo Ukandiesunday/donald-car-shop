@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const ProductCards = ({ products }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pageSize = 5;
+  const pageSize = 8;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
   const paginatedProducts = products.slice(startIndex, endIndex);
@@ -22,6 +22,7 @@ const ProductCards = ({ products }) => {
             key={product.id}
             className="links card-link"
             to={`/product/${product.id}`}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <div className="item-container">
               <div className="img-wrapper">

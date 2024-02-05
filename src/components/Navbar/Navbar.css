@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
-
   background-color: white;
   box-shadow: 0px 1px 0 rgba(186, 182, 182, 0.4);
 }
@@ -35,6 +34,7 @@
 }
 ul li {
   color: rgb(59, 56, 56);
+  font-weight: 500;
 }
 .right-nav {
   display: flex;

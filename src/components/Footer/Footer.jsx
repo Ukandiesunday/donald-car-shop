@@ -11,7 +11,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="col">
-          <h2 className="link3">Links</h2>
+          <p className="link3">Links</p>
         </div>
 
         <div className="col2">
@@ -27,7 +27,7 @@ const Footer = () => {
       </div>
       <div className="foot-bottom">
         <div className="row1">
-          <h2 className="h2">follow us</h2>
+          <p className="link3">follow us</p>
           <div>
             <i className="ri-facebook-box-fill sos-icon"></i>
             <i className="ri-instagram-fill sos-icon"></i>
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="row2">
-          <h2 className="h2">news</h2>
+          <p className="link3">news</p>
           <div className="logo">
             <a href="https://cars.usnews.com/">
               <img

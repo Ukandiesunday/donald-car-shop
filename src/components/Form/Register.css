@@ -29,6 +29,9 @@
   border-radius: 5px;
   padding-left: 5px;
 }
+.p-register {
+  margin-bottom: 10px;
+}
 .item input:focus {
   outline: none;
 }

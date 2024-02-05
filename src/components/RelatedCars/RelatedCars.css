@@ -1,16 +1,26 @@
 .rela-cars {
-  margin: 120px 0 60px 0;
+  margin: 140px 0 80px 0;
   padding: 0 4%;
 }
 
 .rela-car-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  gap: 10px;
 }
-
+.related-cars-link {
+  box-shadow: 0 0 1px grey;
+}
+.rela-items2 {
+  padding: 6px;
+}
+.rela-img-wrapper {
+  width: 100%;
+  max-height: 300px;
+  height: 235px;
+}
 .rela-img-container {
   width: 100%;
-  max-height: 200px;
-  height: 300px;
+  height: 100%;
+  border-radius: 4px;
 }

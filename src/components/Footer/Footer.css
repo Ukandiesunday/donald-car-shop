@@ -11,21 +11,17 @@
   font-size: 15px;
   margin-bottom: 15px;
 }
-.h2,
-.link3 {
-  color: black;
-  font-size: 15px;
-}
+
 .logo {
   width: 70px;
   height: 20px;
 }
-h2,
+
 .link3 {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   text-transform: capitalize;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   color: black;
   cursor: pointer;
   text-decoration: none;

@@ -54,7 +54,7 @@ const Reviews = () => {
   return (
     <div className="rev-wrapper">
       <div className="review">
-        <h1>what our customers say!</h1>
+        <h2>what our customers say!</h2>
         <div className="banner-wrapper">
           <div className="slider-container">
             <Slider {...settings} className="slider slide">

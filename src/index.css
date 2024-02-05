@@ -22,8 +22,3 @@ body {
   color: #00c1ae;
   font-weight: 500;
 }
-@media (max-width: 768px) {
-  h2 {
-    font-size: 13px;
-  }
-}

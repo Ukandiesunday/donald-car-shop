@@ -145,9 +145,9 @@ export const data = [
     id: "id2",
     title: "2019 Mercedes-Benz A-Class A",
     img: [
-      "https://img.vast.com/usnews/6565327338679767257/1/640x480",
-
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_boD_-EZgpSbP8aly7lbZQFQm9d6NQib_1imFznDdI-zQOpvLHE7JYjqafB7Zj7I-GA&usqp=CAU",
+
+      "https://img.vast.com/usnews/6565327338679767257/1/640x480",
 
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3z4R4EUAf8-0HR1aha9NS1nayXzKEAmDE9HiA3nNg6Mlu6YxwgplKkrCdz4OHdmazPqU&usqp=CAU",
     ],
@@ -170,7 +170,7 @@ export const data = [
 
       "https://media.ed.edmunds-media.com/toyota/prius/2019/oem/2019_toyota_prius_4dr-hatchback_l-eco_rq_oem_1_500.jpg",
 
-      "https://media.ed.edmunds-media.com/toyota/prius/2022/evox/2022_toyota_prius_4dr-hatchback_l-eco_tds_btl_evox_3_500.jpg",
+      "https://media.ed.edmunds-media.com/toyota/prius/2022/oem/2022_toyota_prius_4dr-hatchback_nightshade-edition-awd-e_r_oem_1_815x543.jpg",
     ],
     price: 22117.48,
     desc: "The Toyota Prius is Toyota’s popular hybrid model. Minor upgrades were done in the 2022 edition, thus, the 2022 Toyota Prius looks so much like its predecessor. Amongst its hybrid competitors, the Toyota Prius has gained prominence for its remarkable fuel efficiency and affordability",

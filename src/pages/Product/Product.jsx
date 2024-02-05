@@ -38,7 +38,7 @@ const Product = () => {
     <div>
       <div className="product">
         <div className="product-left">
-          <h2>
+          <h2 className="h2">
             proceed to buy your {condition} {make} car
           </h2>
           <div className="product-center">
@@ -60,7 +60,7 @@ const Product = () => {
           </div>
         </div>
         <div className="product-right">
-          <h2>{title}</h2>
+          <h3>{title}</h3>
           <span className="cart-price">${price}</span>
 
           <div className="amt-container">
@@ -99,7 +99,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className="">
+      <div>
         <RelatedCars make={make} data={data} />
       </div>
       <div>

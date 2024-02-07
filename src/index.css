@@ -22,3 +22,36 @@ body {
   color: #00c1ae;
   font-weight: 500;
 }
+/* style rules for make */
+.make {
+  padding: 0 10% 20px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.make-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .make-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  .make {
+    overflow-x: scroll;
+  }
+}
+.make-wrapper p {
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+.make-wrapper:hover {
+  cursor: pointer;
+  box-shadow: 0 0 4px #14b5a5;
+}

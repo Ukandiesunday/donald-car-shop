@@ -4,10 +4,12 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Input from "../../components/Input/Input";
 import { data } from "../../assets/data/data";
 import { useState } from "react";
+import Make from "../../components/Make";
 const Products = ({ myElementRef }) => {
   const [category, setCategory] = useState(null);
   const [query, setQuery] = useState("");
   const [selectedInput, setSelectedInput] = useState(null);
+  const [make, setMake] = useState(null);
 
   //filter typed input
   const filteredItems = data.filter(
@@ -25,18 +27,22 @@ const Products = ({ myElementRef }) => {
     setCategory(e.target.value);
     setSelectedInput(e.target.value === selectedInput ? null : e.target.value);
   };
+  //To filter make when clicked on the logo
+  const filteredMake = data.filter((product) => product.make === make);
 
   const handleColorChange = (e) => {
     setCategory(e.target.value);
     setSelectedInput(e.target.value === selectedInput ? null : e.target.value);
   };
 
-  const handleQueryChange = () => {};
-
-  const handleChange = (products, selected, query) => {
+  const handleChange = (products, selected, query, make) => {
     let filteredProducts = products;
     if (query) {
       filteredProducts = filteredItems;
+    }
+
+    if (make) {
+      filteredProducts = filteredMake;
     }
     if (selected) {
       filteredProducts = filteredProducts.filter(
@@ -51,10 +57,14 @@ const Products = ({ myElementRef }) => {
     return filteredProducts;
   };
 
-  const result = handleChange(data, category, query);
+  const result = handleChange(data, category, query, make);
 
   return (
     <div className="products-wrapper">
+      <div>
+        <Make setMake={setMake} />
+      </div>
+
       <div className="products">
         <div className="cat-left">
           <Input
@@ -66,11 +76,7 @@ const Products = ({ myElementRef }) => {
         </div>
         <div className="cat-right" ref={myElementRef}>
           <h3>explore our affordable and durable cars</h3>
-          <SearchBar
-            handleQueryChange={handleQueryChange}
-            query={query}
-            setQuery={setQuery}
-          />
+          <SearchBar query={query} setQuery={setQuery} />
           <ProductCards products={result} />
         </div>
       </div>

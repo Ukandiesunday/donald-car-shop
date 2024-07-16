@@ -10,14 +10,19 @@ const Make = ({ setMake }) => {
     { make: toyota, name: "toyota" },
     { make: benz, name: "benz" },
     { make: bmw, name: "bmw" },
+    { make: "", name: "" },
   ];
   return (
     <div>
       <div className="make">
-        {cars.map((car) => (
-          <button className="make-wrapper" onClick={() => setMake(car.name)}>
+        {cars.map((car, ind) => (
+          <button
+            key={ind}
+            className="make-wrapper"
+            onClick={() => setMake(car.name)}
+          >
             <img src={car.make} alt="" />
-            <p>{car.name}</p>
+            <p style={{ fontWeight: "600", marginTop: "10px" }}>{car.name}</p>
           </button>
         ))}
       </div>

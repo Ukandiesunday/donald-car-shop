@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { addToCart, decrease, removeItem } from "../../Redux/cartReducer";
 import "./Cart.css";
 // import { data } from "../../assets/data/data";
@@ -16,7 +16,7 @@ const Cart = () => {
       <div className="empty">
         <h1>Your cart is empty!</h1>
         <h3>Browse our products and discover our best deals</h3>
-        <Link className="link link2" to="/products/id">
+        <Link className="link link2" to="/products">
           START SHOPPING
         </Link>
       </div>
@@ -28,7 +28,7 @@ const Cart = () => {
       <h2>Products in your Cart</h2>
       <div className="cart-modal-container">
         {products?.map((item) => {
-          const { id, img, title, desc, price, quantity } = item;
+          const { id, img, title, price, quantity } = item;
 
           return (
             <div key={id} className="info-container">
@@ -77,10 +77,10 @@ const Cart = () => {
           </div>
 
           <button className="checkout-btn cart-btn">PROCEED TO CHECKOUT</button>
-          <span className="call">
+          <a href="tel:+2349153678691" className="call">
             <br />
             Call: +2349153678691
-          </span>
+          </a>
 
           <div className="clear-container">
             <button

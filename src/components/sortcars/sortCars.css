@@ -1,0 +1,44 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputItems input {
+  display: block;
+  margin: -15px 0px 0px 20px;
+}
+.inputItems label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-container h2 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.inputItems button {
+  display: block;
+  cursor: pointer;
+  border: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+.inputItems span {
+  font-size: 18px;
+  font-weight: 500;
+}

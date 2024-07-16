@@ -1,7 +1,7 @@
 .product {
   display: flex;
-  margin: 80px 0 50px;
-  gap: 20px;
+  margin: 100px 0 50px;
+  gap: 40px;
   padding: 0 4%;
 }
 .related-cars-wrapper {
@@ -13,29 +13,27 @@
 .product-left {
   flex-basis: 60%;
 }
-.product-left h2,
-.product-right h2,
-.h2 {
-  color: black;
-  font-size: 26px;
+.product-left h2 {
+  font-size: 30px;
   text-wrap: nowrap;
   margin-bottom: 16px;
   text-transform: capitalize;
   text-wrap: wrap;
+  color: inherit;
+  margin: 20px 0px 30px;
 }
+
 .clickable-img {
   max-height: 130px;
   height: 100%;
-  opacity: 0.8;
+
   width: 100%;
   overflow: hidden;
-  transition: opacity 0.3s ease-in;
-  border: 1px solid grey;
+
+  border: 1px solid #cdd2d9;
   padding: 4px;
 }
-.clickable-img:hover {
-  opacity: 1;
-}
+
 .clickable-img img {
   display: block;
   width: 100%;
@@ -48,7 +46,7 @@
   width: 100%;
   height: fit-content;
   overflow: hidden;
-  border: 1px solid grey;
+  border: 1px solid #cdd2d9;
   border-radius: 3px;
 }
 
@@ -65,14 +63,13 @@ img {
 }
 
 .product-right {
-  flex-basis: 30%;
+  flex-basis: 32%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
   margin-top: 50px;
 }
 .cart-price {
-  color: black;
   font-weight: 500;
   font-size: 18px;
 }
@@ -83,9 +80,9 @@ img {
   gap: 20px;
 }
 .desc-2 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  color: black;
+  line-height: 27px;
 }
 .desc-2 h4 {
   margin-bottom: 5px;
@@ -95,7 +92,7 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
   cursor: pointer;
 }
 

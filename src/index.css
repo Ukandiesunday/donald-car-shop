@@ -7,24 +7,47 @@
   font-family: "Inter", sans-serif;
 }
 
-body {
-  margin: 0;
+:root {
+  /* light theme */
+  --light-bg-soft: #ffff;
+
+  --light-text-color: #4c536c;
+  --light-text-color-soft: #cbd1da;
+  --border: #d8dee8;
+  --border-bottom: 1.5px solid #00c1ae;
+  /* dark theme */
+  --dark-bg-soft: #1c1e26;
+  --dark-bg-color: #000;
+  --dark-text-color: #dbdeeb;
+  --dark-text-color-soft: #cbd1da;
+  --border: #d8dee8;
 }
-.link {
+
+body {
+  background: var(--light-bg-soft);
+  color: var(--light-text-color);
+}
+a {
   text-decoration: none;
   margin-right: 10px;
   font-size: 18px;
-  color: rgb(59, 56, 56);
-
   cursor: pointer;
+
+  color: var(--light-text-color);
+  color: inherit;
 }
 .link2 {
   color: #00c1ae;
   font-weight: 500;
 }
+
+li {
+  list-style-type: none;
+  font-weight: 500;
+}
 /* style rules for make */
 .make {
-  padding: 0 10% 20px 10%;
+  padding: 0 10% 30px 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;

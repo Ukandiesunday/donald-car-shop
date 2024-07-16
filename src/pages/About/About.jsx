@@ -19,7 +19,7 @@ const About = () => {
       <div className="about-left">
         <div className="div1">
           <p>
-            <b>carStore</b> is known for excellent car sales and services. We've
+            <b>carShop</b> is known for excellent car sales and services. We've
             recorded great success adventures in our business for more than
             decades, our clients/customers are placed at high esteem as we meet
             their desires accordingly. Moreover our cars are best described with
@@ -42,23 +42,23 @@ const About = () => {
       </div>
       <div className="about-right">
         <h3>Meet Our Team</h3>
-        <p>Our team are always committed to your services </p>
+        <p>Our team members are always committed to your services </p>
         <div className="abt-imgs">
           <div className="abt-items">
             <img className="review-img" src={prince} alt="" />
-            <p>Mr. prince</p>
+            <h4>Mr. prince</h4>
             <p>Chief Engineer</p>
             <p>Cars Inspection</p>
           </div>
           <div className="abt-items">
             <img className="review-img" src={team3} alt="" />
             <i className="ri-customer-service-2-line"></i>
-            <p>Miss. Aliya</p>
+            <h4>Miss. Aliya</h4>
             <p>Customer Care officer</p>
           </div>
           <div className="abt-items">
             <img className="review-img" src={team2} alt="" />
-            <p>Mr. Smith</p>
+            <h4>Mr. Smith</h4>
             <p>Sales and delivery manager</p>
           </div>
         </div>

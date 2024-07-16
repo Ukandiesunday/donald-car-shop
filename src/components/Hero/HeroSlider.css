@@ -64,25 +64,37 @@
   padding-left: 40px;
 }
 .hero-span {
-  background-color: red;
+  background-color: rgb(255, 83, 42);
   width: 39px;
   height: 39px;
 }
 .hero-p,
 .hero-p2 {
   position: absolute;
-  top: 30px;
-  color: black;
-  font-size: 23px;
+  top: 50px;
+
+  font-size: 30px;
   font-weight: 600;
   text-transform: capitalize;
   left: 50px;
   z-index: 2;
 }
 .hero-p2 {
-  top: 150px;
-  color: red;
-  font-size: 22px;
+  top: 200px;
+  color: rgb(255, 83, 42);
+  font-size: 25px;
+  font-weight: 600;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
 }
 @media (max-width: 768px) {
   .hero-p {

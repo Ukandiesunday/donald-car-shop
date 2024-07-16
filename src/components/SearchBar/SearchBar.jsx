@@ -8,7 +8,7 @@ const SearchBar = ({ handleQueryChange, query, setQuery }) => {
         value={query}
         // onChange={handleQueryChange}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Find cars... e.g nissan, benz"
+        placeholder="Search cars... e.g nissan, benz"
       />
       <i className="ri-search-line" onClick={handleQueryChange}></i>
     </div>

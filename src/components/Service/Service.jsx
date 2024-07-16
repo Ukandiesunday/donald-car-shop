@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Service.css";
 
 const Service = () => {
@@ -8,7 +9,9 @@ const Service = () => {
           <div className="serv-desc1">
             Become <b>carStore</b> Dealer Partner. Buy used and new cars below
             the market price and increase your margin up to 30%
-            <p>learn More</p>
+            <Link className="learnMore" to={"/about"}>
+              learn More
+            </Link>
           </div>
           <div className="serv-img-cont">
             <img

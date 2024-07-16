@@ -1,5 +1,5 @@
 .footer {
-  padding: 25px 0 25px 0;
+  padding: 25px 0 50px 0;
   background-color: #00c1ae;
   color: black;
 }
@@ -9,7 +9,7 @@
   justify-content: space-evenly;
   align-items: center;
   font-size: 15px;
-  margin-bottom: 15px;
+  margin: 20px 0px 40px;
 }
 
 .logo {
@@ -21,20 +21,19 @@
   font-size: 15px;
   font-weight: 600;
   text-transform: capitalize;
-  margin-bottom: 4px;
-  color: black;
+  margin-bottom: 10px;
+
   cursor: pointer;
   text-decoration: none;
 }
 .foot-bottom {
-  margin-top: 10px;
   display: flex;
   justify-content: space-evenly;
 }
 hr {
   border: 1px solid rgb(148, 147, 147);
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
   width: 100%;
 }
 

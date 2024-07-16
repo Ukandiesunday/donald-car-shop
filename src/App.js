@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
@@ -11,10 +11,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { calculate } from "./Redux/cartReducer";
 import Cart from "./components/Cart/Cart";
-import Register from "./components/Form/Register";
-import Login from "./components/Form/Login";
+import Register from "./components/register/Register";
+import Login from "./components/login/Login";
 
-const Layout = () => {
+const SharedLayout = () => {
   return (
     <div className="app">
       <Navbar />
@@ -24,48 +24,6 @@ const Layout = () => {
   );
 };
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/products/:id",
-        element: <Products />,
-      },
-      {
-        path: "/product/:id",
-        element: <Product />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-
-      {
-        path: "/register",
-        element: <Register />,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-    ],
-  },
-]);
-
 function App() {
   const products = useSelector((store) => store.cart.products);
   const dispatch = useDispatch();
@@ -74,7 +32,21 @@ function App() {
   }, [products, dispatch]);
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/products/" element={<Products />} />
+            <Route path="products/:id" element={<Product />} />
+
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

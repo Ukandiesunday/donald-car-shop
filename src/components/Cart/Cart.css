@@ -1,17 +1,15 @@
 .cart-modal {
-  padding: 30px 5% 0 5%;
+  padding: 60px 5% 0 5%;
   position: relative;
   margin: 60px auto;
   width: fit-content;
 
   background-color: #fcfdfe;
   border-radius: 4px;
-  color: black;
 }
 .cart-modal h1 {
   margin-bottom: 30px;
-  font-size: 25px;
-  color: rgb(22, 174, 159);
+  font-size: 30px;
 }
 .cart-desc {
   display: flex;
@@ -100,6 +98,7 @@
 .checkout-btn {
   background: rgb(22, 174, 159);
   color: white;
+  padding: 6px;
 }
 .clear-cart {
   color: red;

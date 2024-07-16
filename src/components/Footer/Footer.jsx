@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-top-container">
         <div className="col">
-          <Link className="link3" to="/products/:id">
+          <Link className="link3" to="/products">
             Cars
           </Link>
         </div>
@@ -52,7 +52,7 @@ const Footer = () => {
           Made with <i className="ri-heart-fill"></i> by Ukandie Sunday.
         </div>
         <div>
-          &copy;copy right {new Date().getFullYear()} carStore, All rights
+          &copy;copy right {new Date().getFullYear()} carShop, All rights
           reserved.
         </div>
       </div>

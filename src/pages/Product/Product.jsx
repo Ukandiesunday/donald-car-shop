@@ -6,6 +6,7 @@ import Reviews from "../../components/Reviews/Reviews";
 import { addToCart, decrease } from "../../Redux/cartReducer";
 import { useState } from "react";
 import RelatedCars from "../../components/RelatedCars/RelatedCars";
+import Subscription from "../../components/Subscription";
 
 const Product = () => {
   const [mainImg, setMainImg] = useState(0);
@@ -13,11 +14,16 @@ const Product = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const { products } = useSelector((state) => state?.cart);
-  const searchItem = products.find((item) => item.id === id);
+
+  const searchItem = products.find((item) => item.id === id); // finding the items pushed in previously and retrieve single item.
+
+  const singleItem = data.find((item) => item.id === id);
+  console.log(singleItem);
+  // Sending same single item to the cart state i.e payloadItems;
   const { title, img, desc, price, condition, make, color, autonomy, oil } =
-    data.find((item) => item.id === id);
-  //To send same single product items to payload
-  const cartItems = {
+    singleItem;
+
+  const payloadItems = {
     title,
     img,
     price,
@@ -30,6 +36,7 @@ const Product = () => {
     quantity: 1,
     total: 0,
   };
+
   const handleImgChange = (index) => {
     setMainImg(index);
   };
@@ -66,7 +73,7 @@ const Product = () => {
           <div className="amt-container">
             <button
               className="cart-btn"
-              onClick={() => dispatch(decrease(cartItems))}
+              onClick={() => dispatch(decrease(payloadItems))}
             >
               <i className="ri-subtract-line"></i>
             </button>
@@ -76,7 +83,7 @@ const Product = () => {
             </span>
             <button
               className="cart-btn"
-              onClick={() => dispatch(addToCart(cartItems))}
+              onClick={() => dispatch(addToCart(payloadItems))}
             >
               <i className="ri-add-fill"></i>
             </button>
@@ -84,13 +91,13 @@ const Product = () => {
 
           <button
             className="add-to-cart"
-            onClick={() => dispatch(addToCart(cartItems))}
+            onClick={() => dispatch(addToCart(payloadItems))}
           >
             <i className="ri-shopping-cart-2-line"></i>
             ADD TO CART
           </button>
           <span className="call">Call: +2349153678691</span>
-          <Link className="link link2" to="/products/:id">
+          <Link className="link link2" to="/products/">
             Continue Shopping
           </Link>
           <div className="desc-2">
@@ -105,6 +112,7 @@ const Product = () => {
       <div>
         <Reviews />
       </div>
+      <Subscription />
     </div>
   );
 };

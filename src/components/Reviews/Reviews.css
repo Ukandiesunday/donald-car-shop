@@ -1,7 +1,7 @@
 .rev-wrapper {
   background-color: #00c1ae;
 
-  margin: 70px auto;
+  margin: 100px auto;
 }
 .review {
   width: 90%;
@@ -11,8 +11,9 @@
   border-radius: 50px 50px 0 0;
 }
 .review h2 {
-  margin: 5px 0 20px;
+  margin: 5px 0 30px;
   text-align: center;
+  font-size: 30px;
   text-transform: capitalize;
 }
 .slide {
@@ -59,11 +60,20 @@
 .slide-icons i:hover {
   background: rgb(221, 231, 231);
 }
-
+.slider-img-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  align-items: baseline !important;
+}
+.slider-img-container p {
+  line-height: 27px;
+}
 .slide-item {
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding-inline: 20px;
   width: 100px;
 }

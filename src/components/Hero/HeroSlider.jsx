@@ -19,7 +19,6 @@ const HeroSlider = ({ handleScrollBottom }) => {
     <div className="slider-wrapper">
       <Slider className="slider" {...settings}>
         <div className="hero-slide slider__item-01">
-          <div></div>
           <div className="hero-content">
             Get the best of our BMW cars and reserve 30% off your trades.
           </div>

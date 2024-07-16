@@ -40,6 +40,9 @@ textarea:focus {
   background-color: white;
 }
 @media (max-width: 768px) {
+  .contact-wrapper {
+    padding-top: 30px;
+  }
   .contact-wrapper h1 {
     font-size: 24px;
   }

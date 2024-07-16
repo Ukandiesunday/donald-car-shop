@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./ProductCards.css";
 import React, { useState } from "react";
+import { Tooltip } from "@mui/material";
 
 const ProductCards = ({ products }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,31 +19,37 @@ const ProductCards = ({ products }) => {
     <div>
       <div className="cards">
         {paginatedProducts.map((product) => (
-          <Link
+          <Tooltip
+            title={"Click car to see more details and buy"}
             key={product.id}
-            className="links card-link"
-            to={`/product/${product.id}`}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <div className="item-container">
-              <div className="img-wrapper">
-                <img className="img1" src={product.img[0]} alt="cars" />
-              </div>
-
-              <div className="details">
-                <div className="title">{product.title}</div>
-
-                <div className="sub-details">
-                  <div className="condition">
-                    Condition: {product.condition}
-                  </div>
-                  <div className="uses">Uses: {product.oil}</div>
+            <Link
+              className="links card-link"
+              to={`/products/${product.id}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <div className="item-container">
+                <div className="img-wrapper">
+                  <img className="img1" src={product?.img[0]} alt="cars" />
                 </div>
-                <div> Ranges Up To {product.autonomy} Miles</div>
-                <div className="price">${product.price}</div>
+
+                <div className="details">
+                  <div className="title">{product?.title}</div>
+
+                  <div className="sub-details">
+                    <div className="condition">
+                      Condition: {product?.condition}
+                    </div>
+                    <div className="uses">Uses: {product?.oil}</div>
+                  </div>
+                  <div> Ranges Up To {product?.autonomy} Miles</div>
+                  <div className="price">
+                    Price : {""}${product?.price}
+                  </div>
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </Tooltip>
         ))}
       </div>
       <div className="btn-container">

@@ -1,0 +1,58 @@
+.userProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: -200%;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+}
+.userProfile.open-profile-modal {
+  right: 0;
+  transition: right 0.4s ease-in-out;
+}
+.profile-header {
+  padding-inline: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1.5px 1.5px rgba(0, 0, 0, 0.2);
+}
+
+.taps {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.taps.active-tap {
+  border-bottom: var(--border-bottom-tap);
+}
+.profile-wrapper {
+  padding-top: 50px;
+  height: 100vh;
+  width: 65%;
+  background: #fff;
+}
+.summary-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.transaction,
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.transaction {
+  text-align: center;
+}

@@ -1,9 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
+import team2 from "../../assets/images/user-01.png";
 import { useState } from "react";
+import UserProfile from "../../components/useprofile/UserProfile";
 import { useSelector } from "react-redux";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpenProfile, setOpenProfile] = useState(false);
   const { total } = useSelector((state) => state.cart);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,6 +18,12 @@ const Navbar = () => {
     { path: "/about", link: "About" },
     { path: "/contact", link: "Contact" },
   ];
+
+  const handleProfileOpen = () => {
+    setOpenProfile(!isOpenProfile);
+  };
+  const currentUser = true;
+
   return (
     <div className="navbar">
       <div className="nav-wrapper">
@@ -36,22 +46,29 @@ const Navbar = () => {
             <div className="logo">carShop</div>
           </Link>
 
-          <div className="profile-container">
-            <Link to={"/login"} className="user">
-              Login
-            </Link>
-            <Link className="user register" to={"/register"}>
-              Sign up
-            </Link>
+          <div className="profile-container" onClick={handleProfileOpen}>
+            {currentUser ? (
+              <div className="avatar-container">
+                <img src={team2} alt="" className="avatar" />
+                <span>Sam</span>
+              </div>
+            ) : (
+              <>
+                <Link to={"/login"} className="auth">
+                  Login
+                </Link>
+                <Link className="auth register" to={"/register"}>
+                  Sign up
+                </Link>
+              </>
+            )}
           </div>
-
           <Link className="link" to="/cart">
             <span className="cart">
               <i className="ri-shopping-cart-2-line"></i>
               <span className="cart-amount">{total}</span>
             </span>
           </Link>
-
           <div onClick={toggleMenu} className="menu-button">
             <i className="ri-play-list-2-fill"></i>
           </div>
@@ -77,6 +94,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+      {isOpenProfile && <UserProfile handleProfileOpen={handleProfileOpen} />}
     </div>
   );
 };

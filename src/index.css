@@ -15,6 +15,7 @@
   --light-text-color-soft: #cbd1da;
   --border: #d8dee8;
   --border-bottom: 1.5px solid #00c1ae;
+  --border-bottom-tap: 3px solid #00c1ae;
   /* dark theme */
   --dark-bg-soft: #1c1e26;
   --dark-bg-color: #000;

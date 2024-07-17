@@ -1,4 +1,5 @@
 .navbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,15 +49,24 @@
   align-items: center;
   justify-content: space-between;
 }
-
-.user {
+.avatar {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.avatar-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.auth {
   font-weight: 500;
   cursor: pointer;
   padding: 6px 10px;
   border-radius: 5px;
 }
 
-.user:hover {
+.auth:hover {
   text-decoration: underline;
 }
 

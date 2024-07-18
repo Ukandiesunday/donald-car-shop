@@ -3,17 +3,28 @@ import "../register/Register.css";
 import { useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../../formSchema/schema";
 import Button from "../button/Button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import TextInput from "../textInput/TextInput";
-
 import { useState } from "react";
+import { toast } from "react-toastify";
+import Loader from "../loader/Loader";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+import { storeItem } from "../utility/storage";
+import { useDispatch } from "react-redux";
+import { login } from "../redux1/authSlice";
+
 const Login = () => {
+  const dispatch = useDispatch();
   const [visiblePassword, setVisiblePassword] = useState(false);
-  const [email, setEmail] = useState("");
-  console.log(email);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  // Toggling password visibility
   const togglePassword = () => {
     setVisiblePassword(!visiblePassword);
   };
@@ -21,14 +32,38 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    alert("form submitted successfully");
+  // Registering form fields
+  const onSubmit = async (data) => {
+    setLoading(true);
+    const { email, password } = data;
+    await signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential?.user?.accessToken;
+
+        console.log(user);
+
+        if (user) {
+          storeItem("user", user);
+          console.log("logging in user", user);
+          dispatch(login(user));
+
+          reset();
+          toast.success("login successfully");
+          navigate("/");
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.code);
+        setError(error.message);
+      });
   };
   return (
     <div className="sign-up">
@@ -63,8 +98,13 @@ const Login = () => {
                 </div>
               }
             />
-
-            <Button type="submit" label={"Login"} />
+            {error && <p className="server-error">{error}</p>}
+            <Button
+              type="submit"
+              label={loading ? "processing..." : "Login"}
+              disabled={loading}
+              loader={loading && <Loader />}
+            />
             <div className="registered">
               Don't Have Account?{" "}
               <Link to="/register" className="sign-in">

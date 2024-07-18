@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import "./Modal.css";
-import { clearCart } from "../../Redux/cartReducer";
-import { closeModal } from "./modalSlice";
+import { clearCart } from "../redux1/cartSlice";
+import { closeModal } from "../redux1/modalSlice";
 
-const Modal = ({}) => {
+const Modal = () => {
   const dispatch = useDispatch();
   return (
     <div className="modal">
@@ -20,9 +20,7 @@ const Modal = ({}) => {
             dispatch(clearCart());
             dispatch(closeModal());
           }}
-        >
-          YES
-        </button>
+        ></button>
         <button onClick={() => dispatch(closeModal())}>NO</button>
       </div>
     </div>

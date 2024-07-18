@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { addToCart, decrease, removeItem } from "../../Redux/cartReducer";
+
 import "./Cart.css";
 // import { data } from "../../assets/data/data";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "../Modal/Modal";
-import { openModal } from "../Modal/modalSlice";
+import { addToCart, decrease, removeItem } from "../redux1/cartSlice";
+import { openModal } from "../redux1/modalSlice";
 
 const Cart = () => {
   const { products, amount } = useSelector((state) => state.cart);

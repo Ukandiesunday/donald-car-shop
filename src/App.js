@@ -9,10 +9,14 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { calculate } from "./Redux/cartReducer";
+
 import Cart from "./components/Cart/Cart";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
+import { calculate } from "./components/redux1/cartSlice";
+
+import { login } from "./components/redux1/authSlice";
+import { retrieveItem } from "./components/utility/storage";
 
 const SharedLayout = () => {
   return (
@@ -25,11 +29,21 @@ const SharedLayout = () => {
 };
 
 function App() {
-  const products = useSelector((store) => store.cart.products);
+  const { products } = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(calculate());
   }, [products, dispatch]);
+
+  useEffect(() => {
+    const currentUser = retrieveItem("user");
+    console.log("getting user", currentUser);
+    if (currentUser) {
+      dispatch(login(currentUser));
+    }
+  }, [dispatch]);
+
   return (
     <div className="App">
       <BrowserRouter>

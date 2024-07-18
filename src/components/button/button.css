@@ -3,11 +3,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   cursor: pointer;
   padding: 10px 15px;
   background-color: rgb(0, 193, 174);
   color: white;
   border-radius: 5px;
+  position: relative;
+}
+
+button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
 }

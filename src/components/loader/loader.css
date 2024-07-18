@@ -1,16 +1,17 @@
 .loader {
   position: absolute;
   right: 40%;
-  left: 60%;
+  left: 62%;
   width: 10px;
   height: 10px;
   padding: 6px;
   transform: translate(-50%, -50%);
-  border: 2px solid rgb(199, 193, 193);
+  border: 3px solid rgb(199, 193, 193);
   border-radius: 50%;
   animation: rotate 0.4s infinite;
-  border-top-color: rgb(130, 167, 130);
-  margin-left: 10px;
+  border-top-color: #00c1ae;
+
+  margin-left: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

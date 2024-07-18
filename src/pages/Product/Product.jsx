@@ -2,11 +2,11 @@ import "./Product.css";
 import { useParams, Link } from "react-router-dom";
 import { data } from "../../assets/data/data";
 import { useDispatch, useSelector } from "react-redux";
-import Reviews from "../../components/Reviews/Reviews";
-import { addToCart, decrease } from "../../Redux/cartReducer";
+
 import { useState } from "react";
 import RelatedCars from "../../components/RelatedCars/RelatedCars";
 import Subscription from "../../components/Subscription";
+import { addToCart, decrease } from "../../components/redux1/cartSlice";
 
 const Product = () => {
   const [mainImg, setMainImg] = useState(0);
@@ -109,9 +109,7 @@ const Product = () => {
       <div>
         <RelatedCars make={make} data={data} />
       </div>
-      <div>
-        <Reviews />
-      </div>
+
       <Subscription />
     </div>
   );

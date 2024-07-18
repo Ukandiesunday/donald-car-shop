@@ -2,7 +2,7 @@ import "./Register.css";
 import { useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerSchema } from "../../formSchema/schema";
 import Button from "../button/Button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -11,26 +11,37 @@ import TextInput from "../textInput/TextInput";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../../firebase";
+import { toast } from "react-toastify";
+import Loader from "../loader/Loader";
 const Register = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [visiblePassword, setVisiblePassword] = useState(false);
   const [visibleConfirmPassword, setConfirmPassword] = useState(false);
+  const navigate = useNavigate();
 
+  // To toggle password visibility
   const togglePassword = () => {
     setVisiblePassword(!visiblePassword);
   };
 
+  // To toggle confirm password visibility
   const toggleConfirmPassword = () => {
     setConfirmPassword(!visibleConfirmPassword);
   };
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(registerSchema),
   });
 
+  // Registering form fields
   const onSubmit = (data) => {
+    setLoading(true);
     const { email, password } = data;
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -38,12 +49,16 @@ const Register = () => {
         // Signed up
         console.log(userCredential);
         const user = userCredential.user;
-        console.log(user);
+        if (user) {
+          toast.success("Success");
+        }
+        reset();
+        setLoading(false);
+        navigate("/login");
       })
       .catch((error) => {
-        console.log(error.code);
         console.log(error.message);
-        // ..
+        setError("Wrong email or password");
       });
   };
 
@@ -98,7 +113,13 @@ const Register = () => {
               }
             />
 
-            <Button type="submit" label={"Sign up"} />
+            <Button
+              type="submit"
+              label={loading ? "processing..." : "Sign up"}
+              disabled={loading}
+              loader={loading && <Loader />}
+            />
+            {error && <p className="server-error"> {error}</p>}
             <div className="registered">
               Already Registered?{" "}
               <Link to="/login" className="sign-in">

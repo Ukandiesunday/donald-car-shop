@@ -3,12 +3,13 @@ import "./Navbar.css";
 import team2 from "../../assets/images/user-01.png";
 import { useState } from "react";
 import UserProfile from "../../components/useprofile/UserProfile";
+import { jwtDecode } from "jwt-decode";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpenProfile, setOpenProfile] = useState(false);
-  const { total } = useSelector((state) => state.cart);
+  const { cart, auth } = useSelector((state) => state);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -22,7 +23,12 @@ const Navbar = () => {
   const handleProfileOpen = () => {
     setOpenProfile(!isOpenProfile);
   };
-  const currentUser = true;
+
+  const user = auth?.currentUser;
+  let decodedToken;
+  if ((typeof user === "string") & user) {
+    decodedToken = jwtDecode(user);
+  }
 
   return (
     <div className="navbar">
@@ -46,11 +52,11 @@ const Navbar = () => {
             <div className="logo">carShop</div>
           </Link>
 
-          <div className="profile-container" onClick={handleProfileOpen}>
-            {currentUser ? (
-              <div className="avatar-container">
+          <div className="profile-container">
+            {user ? (
+              <div onClick={handleProfileOpen} className="avatar-container">
                 <img src={team2} alt="" className="avatar" />
-                <span>Sam</span>
+                {/* <span>{user_id}</span> */}
               </div>
             ) : (
               <>
@@ -66,7 +72,7 @@ const Navbar = () => {
           <Link className="link" to="/cart">
             <span className="cart">
               <i className="ri-shopping-cart-2-line"></i>
-              <span className="cart-amount">{total}</span>
+              <span className="cart-amount">{cart?.total}</span>
             </span>
           </Link>
           <div onClick={toggleMenu} className="menu-button">
@@ -94,7 +100,12 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {isOpenProfile && <UserProfile handleProfileOpen={handleProfileOpen} />}
+      {isOpenProfile && (
+        <UserProfile
+          handleProfileOpen={handleProfileOpen}
+          decodedToken={decodedToken}
+        />
+      )}
     </div>
   );
 };

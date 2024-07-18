@@ -10,7 +10,7 @@ export const registerSchema = yup.object().shape({
     .string()
     .matches(
       passwordRegex,
-      "Password must be at least 8 characters containing uppercase, lowercase, digit, special character"
+      "Password must be at least 8 characters containing uppercase, lowercase, number and  special character"
     )
     .max(18)
     .required(" Please input your password"),
@@ -18,7 +18,7 @@ export const registerSchema = yup.object().shape({
     .string()
     .matches(
       passwordRegex,
-      "Password must be at least 8 characters containing uppercase, lowercase, digit, special character"
+      "Password must be at least 8 characters containing uppercase, lowercase, number and special character"
     )
     .oneOf([yup.ref("password"), null], "Password don't match")
     .required("Confirm password"),
@@ -32,7 +32,7 @@ export const loginSchema = yup.object().shape({
     .string()
     .matches(
       passwordRegex,
-      "Password must be at least 8 characters containing uppercase, lowercase, digit, special character"
+      "Password must be at least 8 characters containing uppercase, lowercase, number and special character"
     )
     .max(18)
     .required(" Please input your password"),

@@ -20,7 +20,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
   box-shadow: 0px 1.5px 1.5px rgba(0, 0, 0, 0.2);
+  overflow-x: scroll;
 }
 
 .taps {
@@ -55,4 +57,26 @@
 
 .transaction {
   text-align: center;
+}
+.logout-icon {
+  /* padding-top: 4px; */
+  font-size: 25px;
+}
+.logout {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00c1ae;
+  cursor: pointer;
+  padding-left: 50px;
+  display: flex;
+
+  gap: 5px;
+}
+
+@media (max-768px) {
+  .profile p {
+    text-wrap: wrap !important;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

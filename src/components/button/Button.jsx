@@ -1,9 +1,15 @@
 import "./button.css";
 
-const Button = ({ type, label, onClick }) => {
+const Button = ({ type, label, onClick, loader, disabled }) => {
   return (
-    <button type={type} onClick={onClick} className="button">
+    <button
+      disabled={disabled}
+      type={type}
+      onClick={onClick}
+      className="button"
+    >
       {label}
+      {loader}
     </button>
   );
 };

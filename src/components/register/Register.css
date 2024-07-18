@@ -52,6 +52,13 @@
   font-weight: 600;
   font-size: 14px;
 }
+.server-error {
+  margin: 10px auto;
+  color: rgb(255, 77, 0);
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.04);
+}
 .sign-in {
   color: rgb(11, 143, 130);
   font-weight: 600;
@@ -60,13 +67,22 @@
   cursor: pointer;
 }
 @media (max-width: 768px) {
+  .sign-up {
+    width: 100%;
+    padding-inline: 0px;
+  }
+  .form-design {
+    display: none;
+  }
+
+  .form-container {
+    flex-basis: 100%;
+  }
   .item input {
     width: 100%;
   }
-  .form {
-    padding: 15px 6%;
-  }
+
   .form-wrapper {
-    padding: 100px 5% 30px 5%;
+    padding: 30px 0px 0px 0px;
   }
 }

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { IoIosLogOut } from "react-icons/io";
 import "./userProfile.css";
-const UserProfile = ({ handleProfileOpen }) => {
+const UserProfile = ({ handleProfileOpen, decodedToken }) => {
   const [tap, setTap] = useState(0);
+
+  const { email, auth_time, user_id } = decodedToken;
   return (
     <div className="">
       <div onClick={handleProfileOpen} className="userProfile">
@@ -18,7 +21,7 @@ const UserProfile = ({ handleProfileOpen }) => {
               className={`taps ${tap === 1 && "active-tap"}`}
               onClick={() => setTap(1)}
             >
-              Transaction History
+              Transaction
             </h3>
           </div>
           <div className="summary-container">
@@ -27,9 +30,20 @@ const UserProfile = ({ handleProfileOpen }) => {
                 <Link to="/profile" className="link">
                   <h2>Profile</h2>
                 </Link>
-                <p>userName :Sam</p>
-                <p>Email: {}</p>
-                <p>Phone : +2349134683483</p>
+                <p>
+                  <b>userId</b> :{user_id}
+                </p>
+                <p>
+                  {" "}
+                  <b>Email:</b> {email}
+                </p>
+                <p>
+                  <b>Logged in at :</b>
+                  {auth_time}
+                </p>
+                <p>
+                  <b>Phone :</b> +2349134683483
+                </p>
               </div>
             )}
             {tap === 1 && (
@@ -43,9 +57,12 @@ const UserProfile = ({ handleProfileOpen }) => {
               </div>
             )}
           </div>
-        </div>
-        <div className="logout">
-          <span>Logout</span>
+          <div>
+            <span className="logout">
+              {""}
+              Logout <IoIosLogOut className="logout-icon" />
+            </span>
+          </div>
         </div>
       </div>
     </div>

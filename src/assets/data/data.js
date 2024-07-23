@@ -178,7 +178,7 @@ export const data = [
   {
     id: "id8",
     title: "2022 Toyota Corolla",
-    img: [toyotacorola02, toyotacorola, toyotacorola, ,],
+    img: [toyotacorola02, toyotacorola, toyotacorola],
     price: 29820.08,
     desc: "The 2022  Toyota Corolla is among the 12th generation of the Toyota Car models which means the automobile company has been doing well over the years. For decades now, Corolla has been a compact car that has shown good value because of its good fuel economy and reputation for being reliable. ",
     year: 2022,

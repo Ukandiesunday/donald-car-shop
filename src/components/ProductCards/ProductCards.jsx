@@ -7,9 +7,9 @@ import { formatMoney } from "../utility/formatMoney";
 const ProductCards = ({ products, filteredItems }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pageSize = 6;
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = currentPage * pageSize;
+  // const pageSize = 6;
+  // const startIndex = (currentPage - 1) * pageSize;
+  // const endIndex = currentPage * pageSize;
   // const paginatedProducts = products.slice(startIndex, endIndex);
   const paginatedProducts = products;
 

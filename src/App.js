@@ -21,6 +21,7 @@ import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 import { calculate } from "./components/redux1/cartSlice";
 import { storeItem } from "./components/utility/storage";
+import ForgotPassword from "./components/forgotpassword/Forgotpassword";
 
 const SharedLayout = () => {
   return (
@@ -84,6 +85,7 @@ function App() {
               }
             />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -27,7 +27,7 @@ export const registerSchema = yup.object().shape({
 export const loginSchema = yup.object().shape({
   email: yup
     .string()
-    .email("Input a valid email!")
+    .email("Input a correct email!")
     .required(" Please input your email!"),
   password: yup
     .string()
@@ -48,4 +48,8 @@ export const messageSchema = yup.object().shape({
     .matches(/^[0-9]{11}$/, "Invalid phone number")
     .required("Enter phone number"),
   message: yup.string().required("Type your message"),
+});
+
+export const forgotPasswordSchema = yup.object().shape({
+  email: yup.string().required("Enter email").email("Enter a valid email"),
 });

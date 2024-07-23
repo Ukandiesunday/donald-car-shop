@@ -3,12 +3,12 @@
 import "../register/Register.css";
 
 import { useForm } from "react-hook-form";
-
+import "./login.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema } from "../../formSchema/schema";
 import Button from "../button/Button";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaCheck, FaEye, FaEyeSlash } from "react-icons/fa";
 import TextInput from "../textInput/TextInput";
 import { useState } from "react";
 import Loader from "../loader/Loader";
@@ -22,6 +22,7 @@ const Login = () => {
   const [visiblePassword, setVisiblePassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isChecked, setChecked] = useState(false);
   const navigate = useNavigate();
 
   // Toggling password visibility
@@ -48,19 +49,17 @@ const Login = () => {
         const user = userCredential?.user?.accessToken;
         console.log(user);
         if (user) {
-          console.log("logging in user", user);
           dispatch(login(user));
 
           reset();
 
           navigate("/");
+          setLoading(false);
         }
-        setLoading(false);
       })
       .catch((error) => {
         console.log(error.code);
         if (error) {
-          // setError("Wrong email or password");
           setError(error.code);
 
           setLoading(false);
@@ -68,7 +67,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="sign-up">
+    <div className="login-container">
       <div className="form-wrapper">
         <div className="form-design">
           <div className="marquee-container">
@@ -113,6 +112,30 @@ const Login = () => {
               }
             />
             {error && <p className="server-error">{error}</p>}
+
+            <div className="checkbox-container">
+              <div className="checkbox-wrapper">
+                <input
+                  className="input-check"
+                  type="checkbox"
+                  name=""
+                  value={isChecked}
+                  id="check"
+                  onChange={(e) => setChecked(e.target.checked)}
+                />
+
+                <label htmlFor="check" className="checkbox-label">
+                  <span className="custom-checkbox">
+                    {isChecked && <FaCheck className="checkmark" />}
+                  </span>
+                  Remember me
+                </label>
+              </div>
+
+              <Link to={"/forgotpassword"} className="sign-in">
+                Forgot Password
+              </Link>
+            </div>
             <Button
               type="submit"
               label={loading ? "processing..." : "Login"}

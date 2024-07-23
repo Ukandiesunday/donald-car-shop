@@ -1,4 +1,4 @@
-.sign-up {
+.login-container {
   max-width: 1300px;
   padding: 80px 10%;
   margin-inline: auto;
@@ -56,6 +56,16 @@
 .form-container {
   flex-basis: 50%;
   border-radius: 10px !important;
+  position: relative;
+}
+.prov-password {
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red;
 }
 
 .form {
@@ -96,6 +106,39 @@
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
+  cursor: pointer;
+}
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  border: 1.5px solid #cbd1da;
+  overflow: hidden;
+}
+.checkmark {
+  background: rgb(0, 193, 174);
+  height: 19px;
+  width: 19px;
+  color: #fff;
+  padding: 2px;
+}
+.input-check {
+  display: none;
+}
+
+.checkbox-wrapper,
+.checkbox-label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
   cursor: pointer;
 }
 @media (max-width: 768px) {

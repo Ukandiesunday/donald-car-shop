@@ -14,7 +14,13 @@ const TextInput = ({
     <div className="item">
       <label htmlFor={label}>{label}</label>
       <div className="inputContainer">
-        <input id={label} type={type} placeholder={placeholder} {...register} />
+        <input
+          className="text-input"
+          id={label}
+          type={type}
+          placeholder={placeholder}
+          {...register}
+        />
         <div className="eyeIcon">{iconButton}</div>
       </div>
       {isError && <p className="error">{errorMessage}</p>}

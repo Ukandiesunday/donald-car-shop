@@ -50,11 +50,11 @@ const Register = () => {
         console.log(userCredential);
         const user = userCredential.user;
         if (user) {
-          toast.success("Success");
+          toast.success("Account created successfully");
+          reset();
+          setLoading(false);
+          navigate("/login");
         }
-        reset();
-        setLoading(false);
-        navigate("/login");
       })
       .catch((error) => {
         if (error) {

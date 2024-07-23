@@ -40,11 +40,13 @@
 .prov-password {
   padding: 4px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   position: absolute;
   top: 0;
   right: 0;
+  color: red;
 }
+
 .form {
   display: flex;
   flex-direction: column;

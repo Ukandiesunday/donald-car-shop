@@ -35,7 +35,7 @@ const SharedLayout = () => {
 function App() {
   const { products } = useSelector((state) => state.cart);
   const { currentUser } = useSelector((state) => state.auth);
-  console.log(currentUser);
+
   const dispatch = useDispatch();
 
   useEffect(() => {

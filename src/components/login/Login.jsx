@@ -12,7 +12,6 @@ import { useState } from "react";
 import Loader from "../loader/Loader";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-import { storeItem } from "../utility/storage";
 import { useDispatch } from "react-redux";
 import { login } from "../redux1/authSlice";
 

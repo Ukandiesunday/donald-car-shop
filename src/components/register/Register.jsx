@@ -69,11 +69,11 @@ const Register = () => {
     <div className="sign-up">
       <div className="form-wrapper">
         <div className="form-design">
-          <div className="design-content">
-            <marquee behavior="smooth" direction="left">
+          <div className="marquee-container">
+            <div className=" marquee">
               Experience durability and tech prowess with our cars. We deal on
               quality and affordable cars.
-            </marquee>
+            </div>
           </div>
         </div>
         <div className="form-container">

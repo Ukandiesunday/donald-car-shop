@@ -6,7 +6,7 @@ import { formatMoney } from "../utility/formatMoney";
 
 const ProductCards = ({ products, filteredItems }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [filterError, setFilterError] = useState("");
+
   const pageSize = 6;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;

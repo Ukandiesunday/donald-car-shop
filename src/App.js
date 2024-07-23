@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
@@ -14,9 +20,7 @@ import Cart from "./components/Cart/Cart";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 import { calculate } from "./components/redux1/cartSlice";
-
-import { login } from "./components/redux1/authSlice";
-import { retrieveItem } from "./components/utility/storage";
+import { storeItem } from "./components/utility/storage";
 
 const SharedLayout = () => {
   return (
@@ -29,7 +33,9 @@ const SharedLayout = () => {
 };
 
 function App() {
-  const { products } = useSelector((state) => state.cart.products);
+  const { products } = useSelector((state) => state.cart);
+  const { currentUser } = useSelector((state) => state.auth);
+  console.log(currentUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,26 +43,46 @@ function App() {
   }, [products, dispatch]);
 
   useEffect(() => {
-    const currentUser = retrieveItem("user");
-    console.log("getting user", currentUser);
-    if (currentUser) {
-      dispatch(login(currentUser));
-    }
-  }, [dispatch]);
+    storeItem("user", currentUser);
+  }, [currentUser]);
 
+  const RequiredRoute = ({ children }) => {
+    return currentUser ? children : <Navigate to="/login" />;
+  };
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
-            <Route path="/products/" element={<Products />} />
-            <Route path="products/:id" element={<Product />} />
+            <Route
+              path="/products/"
+              element={
+                <RequiredRoute>
+                  <Products />
+                </RequiredRoute>
+              }
+            />
+            <Route
+              path="products/:id"
+              element={
+                <RequiredRoute>
+                  <Product />
+                </RequiredRoute>
+              }
+            />
 
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/cart"
+              element={
+                <RequiredRoute>
+                  <Cart />{" "}
+                </RequiredRoute>
+              }
+            />
             <Route path="/login" element={<Login />} />
           </Route>
         </Routes>

@@ -2,19 +2,31 @@ import { Link } from "react-router-dom";
 import "./ProductCards.css";
 import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
+import { formatMoney } from "../utility/formatMoney";
 
-const ProductCards = ({ products }) => {
+const ProductCards = ({ products, filteredItems }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [filterError, setFilterError] = useState("");
   const pageSize = 6;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
   const paginatedProducts = products.slice(startIndex, endIndex);
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
     window.scrollTo(650, 650);
   };
 
+  // to handle filter error
+
+  if (filteredItems.length === 0) {
+    return (
+      <h2 style={{ textAlign: "center", marginTop: "40px" }}>
+        {" "}
+        Search result not found
+      </h2>
+    );
+  }
   return (
     <div>
       <div className="cards">
@@ -40,11 +52,12 @@ const ProductCards = ({ products }) => {
                     <div className="condition">
                       Condition: {product?.condition}
                     </div>
-                    <div className="uses">Uses: {product?.oil}</div>
                   </div>
                   <div> Ranges Up To {product?.autonomy} Miles</div>
-                  <div className="price">
-                    Price : {""}${product?.price}
+                  <div className="price price2">
+                    Price : {""}
+                    {formatMoney(product?.price)}
+                    <span className="buy"> Buy</span>
                   </div>
                 </div>
               </div>

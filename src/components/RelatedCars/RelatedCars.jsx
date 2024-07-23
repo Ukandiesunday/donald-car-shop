@@ -1,6 +1,7 @@
 import { Tooltip } from "@mui/material";
 import "./RelatedCars.css";
 import { Link } from "react-router-dom";
+import { formatMoney } from "../utility/formatMoney";
 const RelatedCars = ({ make, data }) => {
   const filteredCars = data.filter((item) => item.make === make);
   return (
@@ -22,7 +23,10 @@ const RelatedCars = ({ make, data }) => {
                 </div>
                 <div className="rela-items2">
                   <div className="title">{product.title}</div>
-                  <div className="price">${product.price}</div>
+                  <div className="price price2">
+                    {formatMoney(product?.price)}{" "}
+                    <span className="buy">Buy</span>
+                  </div>
                 </div>
               </div>
             </Link>

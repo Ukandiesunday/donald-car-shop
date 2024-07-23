@@ -9,7 +9,6 @@ import Button from "../button/Button";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import TextInput from "../textInput/TextInput";
 import { useState } from "react";
-import { toast } from "react-toastify";
 import Loader from "../loader/Loader";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
@@ -46,31 +45,45 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential?.user?.accessToken;
-
         console.log(user);
-
         if (user) {
-          storeItem("user", user);
           console.log("logging in user", user);
           dispatch(login(user));
 
           reset();
-          toast.success("login successfully");
+
           navigate("/");
         }
         setLoading(false);
       })
       .catch((error) => {
         console.log(error.code);
-        setError(error.message);
+        if (error) {
+          // setError("Wrong email or password");
+          setError(error.code);
+
+          setLoading(false);
+        }
       });
   };
   return (
     <div className="sign-up">
       <div className="form-wrapper">
-        <div className="form-design"></div>
+        <div className="form-design">
+          <div className="design-content">
+            <marquee behavior="smooth" direction="left">
+              Experience durability and tech prowess with our cars. We deal on
+              quality and affordable cars.
+            </marquee>
+          </div>
+        </div>
+
         <div className="form-container">
           <form className="form" action="" onSubmit={handleSubmit(onSubmit)}>
+            <div className="prov-password">
+              <p>E: sam123@gmail.com</p>
+              <p>p: Sam!@123</p>
+            </div>
             <h2 className="h2">Sign in</h2>
 
             <TextInput

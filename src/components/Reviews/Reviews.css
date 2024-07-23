@@ -1,7 +1,9 @@
 .rev-wrapper {
   background-color: #00c1ae;
-
   margin: 100px auto;
+}
+.location {
+  font-weight: 500;
 }
 .review {
   width: 90%;
@@ -47,7 +49,8 @@
   justify-content: space-between;
 }
 .name {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 16px;
 }
 .slide-icons i {
   padding: 3px;

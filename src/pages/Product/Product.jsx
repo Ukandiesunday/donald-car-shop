@@ -7,6 +7,7 @@ import { useState } from "react";
 import RelatedCars from "../../components/RelatedCars/RelatedCars";
 import Subscription from "../../components/Subscription";
 import { addToCart, decrease } from "../../components/redux1/cartSlice";
+import { formatMoney } from "../../components/utility/formatMoney";
 
 const Product = () => {
   const [mainImg, setMainImg] = useState(0);
@@ -18,7 +19,7 @@ const Product = () => {
   const searchItem = products.find((item) => item.id === id); // finding the items pushed in previously and retrieve single item.
 
   const singleItem = data.find((item) => item.id === id);
-  console.log(singleItem);
+
   // Sending same single item to the cart state i.e payloadItems;
   const { title, img, desc, price, condition, make, color, autonomy, oil } =
     singleItem;
@@ -37,6 +38,7 @@ const Product = () => {
     total: 0,
   };
 
+  console.log(payloadItems);
   const handleImgChange = (index) => {
     setMainImg(index);
   };
@@ -68,8 +70,12 @@ const Product = () => {
         </div>
         <div className="product-right">
           <h3>{title}</h3>
-          <span className="cart-price">${price}</span>
-
+          <div className="price-container">
+            <span className="cart-price">{formatMoney(price)}</span>
+            <span className="sub-price">
+              {formatMoney(price * searchItem?.quantity)}
+            </span>
+          </div>
           <div className="amt-container">
             <button
               className="cart-btn"

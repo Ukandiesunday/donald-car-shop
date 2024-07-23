@@ -19,6 +19,7 @@ const cartSlice = createSlice({
       } else {
         state.products.push(action.payload);
       }
+      console.log(state.products);
     },
     decrease: (state, action) => {
       const item = state.products.find((item) => item.id === action.payload.id);

@@ -57,15 +57,25 @@ const Register = () => {
         navigate("/login");
       })
       .catch((error) => {
-        console.log(error.message);
-        setError("Wrong email or password");
+        if (error) {
+          console.log(error.message);
+          setError(error.code);
+          setLoading(false);
+        }
       });
   };
 
   return (
     <div className="sign-up">
       <div className="form-wrapper">
-        <div className="form-design"></div>
+        <div className="form-design">
+          <div className="design-content">
+            <marquee behavior="smooth" direction="left">
+              Experience durability and tech prowess with our cars. We deal on
+              quality and affordable cars.
+            </marquee>
+          </div>
+        </div>
         <div className="form-container">
           <form className="form" action="" onSubmit={handleSubmit(onSubmit)}>
             <h2 className="h2">Sign Up</h2>
@@ -97,7 +107,7 @@ const Register = () => {
             />
             <TextInput
               label="confirm password"
-              placeholder="Confirm password"
+              placeholder="Re-enter password"
               isError={errors?.confirmPassword}
               errorMessage={errors?.confirmPassword?.message || ""}
               type={visibleConfirmPassword ? "text" : "password"}

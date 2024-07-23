@@ -3,7 +3,7 @@ import "./sortCars.css";
 const SortCars = ({
   handleMakeChange,
   handleColorChange,
-  handleConditionChange,
+
   selectedInput,
 }) => {
   return (

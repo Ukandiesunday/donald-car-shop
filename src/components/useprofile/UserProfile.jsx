@@ -1,15 +1,44 @@
 import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
 import { IoIosLogOut } from "react-icons/io";
 import "./userProfile.css";
-const UserProfile = ({ handleProfileOpen, decodedToken }) => {
+import { IoClose } from "react-icons/io5";
+import { removeItem } from "../utility/storage";
+import { auth } from "../../firebase";
+import { logout } from "../redux1/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { jwtDecode } from "jwt-decode";
+import { signOut } from "firebase/auth";
+const UserProfile = ({ handleProfileOpen }) => {
   const [tap, setTap] = useState(0);
+  const dispatch = useDispatch();
 
-  const { email, auth_time, user_id } = decodedToken;
+  const { currentUser } = useSelector((state) => state.auth);
+  let decodedUser;
+  if (typeof currentUser === "string" && currentUser) {
+    decodedUser = jwtDecode(currentUser);
+  }
+
+  const signedOut = () => {
+    signOut(auth)
+      .then(() => {
+        // logout
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    dispatch(logout());
+    removeItem("user");
+    handleProfileOpen();
+  };
   return (
     <div className="">
       <div onClick={handleProfileOpen} className="userProfile">
         <div className="profile-wrapper" onClick={(e) => e.stopPropagation()}>
+          <span className="close-icon">
+            <IoClose onClick={handleProfileOpen} />
+          </span>
           <div className="profile-header">
             <h3
               className={`taps ${tap === 0 && "active-tap"}`}
@@ -31,18 +60,15 @@ const UserProfile = ({ handleProfileOpen, decodedToken }) => {
                   <h2>Profile</h2>
                 </Link>
                 <p>
-                  <b>userId</b> :{user_id}
+                  <b>userId</b> :{""} {decodedUser?.user_id}
                 </p>
                 <p>
                   {" "}
-                  <b>Email:</b> {email}
+                  <b>Email:</b> {""} {decodedUser?.email}
                 </p>
+
                 <p>
-                  <b>Logged in at :</b>
-                  {auth_time}
-                </p>
-                <p>
-                  <b>Phone :</b> +2349134683483
+                  <b>Phone: </b> {""}+2349134683483
                 </p>
               </div>
             )}
@@ -57,7 +83,8 @@ const UserProfile = ({ handleProfileOpen, decodedToken }) => {
               </div>
             )}
           </div>
-          <div>
+
+          <div onClick={signedOut}>
             <span className="logout">
               {""}
               Logout <IoIosLogOut className="logout-icon" />

@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: -200%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
   height: 100vh;
 }
 .userProfile.open-profile-modal {
@@ -22,7 +22,6 @@
   align-items: center;
   gap: 40px;
   box-shadow: 0px 1.5px 1.5px rgba(0, 0, 0, 0.2);
-  overflow-x: scroll;
 }
 
 .taps {
@@ -34,12 +33,13 @@
   border-bottom: var(--border-bottom-tap);
 }
 .profile-wrapper {
-  padding-top: 50px;
+  padding-top: 30px;
   height: 100vh;
   width: 65%;
   background: #fff;
 }
 .summary-container {
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,11 +72,30 @@
 
   gap: 5px;
 }
-
-@media (max-768px) {
+.close-icon {
+  background: rgba(0, 0, 0, 0.09);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #00c1ae;
+  margin: 0px 0px 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .profile-wrapper {
+    width: 90%;
+  }
   .profile p {
     text-wrap: wrap !important;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .profile-header {
+    overflow-x: scroll;
   }
 }

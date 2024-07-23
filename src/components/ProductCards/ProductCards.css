@@ -30,9 +30,10 @@
   border: 1px solid rgb(231, 223, 223);
   border-radius: 10px;
   margin-bottom: 10px;
+  transition: transform 0.4s ease-in-out;
 }
 .card-link:hover {
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+  transform: scale(1.02);
 }
 .img-wrapper {
   width: 100%;

@@ -3,14 +3,14 @@ import bmw from "../assets/images/bmw2.jpeg";
 import benz from "../assets/images/benz.png";
 import toyota from "../assets/images/toyota.png";
 import nissan from "../assets/images/nissan.png";
-
+import all from "../assets/images/aboutImg.jpg";
 const Make = ({ setMake }) => {
   const cars = [
-    { make: nissan, name: "nissan" },
-    { make: toyota, name: "toyota" },
-    { make: benz, name: "benz" },
-    { make: bmw, name: "bmw" },
-    { make: "", name: "" },
+    { makeLogo: all, name: "", label: "all" },
+    { makeLogo: nissan, name: "nissan", label: "nissan" },
+    { makeLogo: toyota, name: "toyota", label: "toyota" },
+    { makeLogo: benz, name: "benz", label: "benz" },
+    { makeLogo: bmw, name: "bmw", label: "bmw" },
   ];
   return (
     <div>
@@ -21,8 +21,12 @@ const Make = ({ setMake }) => {
             className="make-wrapper"
             onClick={() => setMake(car.name)}
           >
-            <img src={car.make} alt="" />
-            <p style={{ fontWeight: "600", marginTop: "10px" }}>{car.name}</p>
+            <img
+              style={{ objectFit: "cover", borderRadius: "50%" }}
+              src={car.makeLogo}
+              alt=""
+            />
+            <p style={{ fontWeight: "600", marginTop: "10px" }}>{car.label}</p>
           </button>
         ))}
       </div>

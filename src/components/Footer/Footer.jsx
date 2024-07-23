@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import carNewsLogo from "../../assets/images/newslogo.svg";
 const Footer = () => {
   return (
     <div className="footer">
@@ -38,10 +39,7 @@ const Footer = () => {
           <p className="link3">news</p>
           <div className="logo">
             <a href="https://cars.usnews.com/">
-              <img
-                src="https://cars.usnews.com/static-atlas/assets/img/usn-logo-large.svg"
-                alt=""
-              />
+              <img src={carNewsLogo} alt="" />
             </a>
           </div>
         </div>

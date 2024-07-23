@@ -3,7 +3,7 @@ import "./Navbar.css";
 import team2 from "../../assets/images/user-01.png";
 import { useState } from "react";
 import UserProfile from "../../components/useprofile/UserProfile";
-import { jwtDecode } from "jwt-decode";
+
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
@@ -23,12 +23,7 @@ const Navbar = () => {
   const handleProfileOpen = () => {
     setOpenProfile(!isOpenProfile);
   };
-
   const user = auth?.currentUser;
-  let decodedToken;
-  if ((typeof user === "string") & user) {
-    decodedToken = jwtDecode(user);
-  }
 
   return (
     <div className="navbar">
@@ -56,7 +51,6 @@ const Navbar = () => {
             {user ? (
               <div onClick={handleProfileOpen} className="avatar-container">
                 <img src={team2} alt="" className="avatar" />
-                {/* <span>{user_id}</span> */}
               </div>
             ) : (
               <>
@@ -100,12 +94,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {isOpenProfile && (
-        <UserProfile
-          handleProfileOpen={handleProfileOpen}
-          decodedToken={decodedToken}
-        />
-      )}
+      {isOpenProfile && <UserProfile handleProfileOpen={handleProfileOpen} />}
     </div>
   );
 };

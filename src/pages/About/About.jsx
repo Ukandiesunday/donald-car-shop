@@ -1,7 +1,7 @@
 import prince from "../../assets/images/prince.jpg";
 import team2 from "../../assets/images/user-01.png";
 import team3 from "../../assets/images/user-02.png";
-
+import aboutImg from "../../assets/images/aboutImg.jpg";
 import "./About.css";
 const About = () => {
   return (
@@ -9,11 +9,7 @@ const About = () => {
       <div className="abt">
         <div className="abt-img">
           <h4>about us</h4>
-          <img
-            className="abt-img"
-            src="https://cars.usnews.com/pics/size/390x290/images/Auto/custom/14033/2019_Mercedes-Benz_A-Class_19.jpg"
-            alt=""
-          />
+          <img className="abt-img" src={aboutImg} alt="" />
         </div>
       </div>
       <div className="about-left">

@@ -61,7 +61,7 @@ const Reviews = () => {
               <div className="slider-img-container slide-item">
                 <img src={emediong} alt="emediong" />
                 <p className="name">Mr. Godwin</p>
-                <p>PortHartcourt</p>
+                <p className="location">PortHartcourt</p>
                 <div className="rev-icons">
                   <i className="ri-star-fill"></i>
                   <i className="ri-star-fill"></i>

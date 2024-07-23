@@ -13,12 +13,14 @@ const Products = ({ myElementRef }) => {
   const [query, setQuery] = useState("");
   const [selectedInput, setSelectedInput] = useState(null);
   const [make, setMake] = useState(null);
-
+  // const [filterError, setFilterError] = useState("");
   //filter cars by input search
   const filteredItems = data.filter((product) =>
     product.title.toLowerCase().includes(query.toLowerCase())
   );
-
+  // if (filteredItems.length === 0) {
+  //   setFilterError("Search result not found");
+  // }
   //filter cars by radio button
   const handleMakeChange = (e) => {
     setCategory(e.target.value);
@@ -83,7 +85,8 @@ const Products = ({ myElementRef }) => {
         <div className="prod-right" ref={myElementRef}>
           <h3>explore our affordable and durable cars</h3>
           <SearchBar query={query} setQuery={setQuery} />
-          <ProductCards products={result} />
+
+          <ProductCards products={result} filteredItems={filteredItems} />
         </div>
       </div>
       <Reviews />

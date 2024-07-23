@@ -10,7 +10,8 @@ const ProductCards = ({ products, filteredItems }) => {
   const pageSize = 6;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
-  const paginatedProducts = products.slice(startIndex, endIndex);
+  // const paginatedProducts = products.slice(startIndex, endIndex);
+  const paginatedProducts = products;
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

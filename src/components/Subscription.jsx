@@ -9,8 +9,8 @@ const Subscription = () => {
       <div className="item" style={{ display: "flex", alignItems: "center" }}>
         <input
           style={{
-            maxWidth: "60%",
-
+            maxWidth: "80%",
+            outline: "none",
             borderRadius: "5px",
             border: "1px solid #cbd1da",
             padding: "10px 15px",

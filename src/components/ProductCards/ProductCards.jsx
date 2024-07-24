@@ -3,7 +3,7 @@ import "./ProductCards.css";
 import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
 import { formatMoney } from "../utility/formatMoney";
-
+import { FaLocationDot } from "react-icons/fa6";
 const ProductCards = ({ products, filteredItems }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -54,7 +54,12 @@ const ProductCards = ({ products, filteredItems }) => {
                       Condition: {product?.condition}
                     </div>
                   </div>
-                  <div> Ranges Up To {product?.autonomy} Miles</div>
+                  <div className="location-container">
+                    <div> Ranges Up To {product?.autonomy} Miles</div>
+                    <span className="location">
+                      <FaLocationDot /> {product.location}
+                    </span>
+                  </div>
                   <div className="price price2">
                     Price : {""}
                     {formatMoney(product?.price)}

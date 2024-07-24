@@ -20,7 +20,9 @@ const Modal = () => {
             dispatch(clearCart());
             dispatch(closeModal());
           }}
-        ></button>
+        >
+          YES
+        </button>
         <button onClick={() => dispatch(closeModal())}>NO</button>
       </div>
     </div>

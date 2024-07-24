@@ -26,10 +26,10 @@ const About = () => {
             markets.
           </p>
           <p className="p">
-            <span style={{ color: "gold" }}>
+            <a href="tel:+2349153678691" style={{ color: "gold " }}>
               <i className="ri-cellphone-fill"></i> HAS A QUESTION?
-            </span>
-            :+2348156678435
+              :+2348156678435
+            </a>
           </p>
         </div>
         <div className="div">

@@ -2,6 +2,7 @@ import { Tooltip } from "@mui/material";
 import "./RelatedCars.css";
 import { Link } from "react-router-dom";
 import { formatMoney } from "../utility/formatMoney";
+import { FaLocationDot } from "react-icons/fa6";
 const RelatedCars = ({ make, data }) => {
   const filteredCars = data.filter((item) => item.make === make);
   return (
@@ -22,7 +23,12 @@ const RelatedCars = ({ make, data }) => {
                   </div>
                 </div>
                 <div className="rela-items2">
-                  <div className="title">{product.title}</div>
+                  <div className="location-container">
+                    <div className="title">{product.title}</div>
+                    <span className="location">
+                      <FaLocationDot /> {product.location}
+                    </span>
+                  </div>
                   <div className="price price2">
                     {formatMoney(product?.price)}{" "}
                     <span className="buy">Buy</span>

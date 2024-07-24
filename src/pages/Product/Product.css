@@ -13,15 +13,19 @@
 .product-left {
   flex-basis: 60%;
 }
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .product-left h2 {
   font-size: 30px;
   text-wrap: nowrap;
-  margin-bottom: 16px;
+  margin-top: 15px;
   text-transform: capitalize;
   text-wrap: wrap;
 
   color: inherit;
-  margin: 20px 0px 30px;
 }
 
 .clickable-img {

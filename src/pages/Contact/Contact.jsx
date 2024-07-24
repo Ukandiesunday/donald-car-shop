@@ -33,13 +33,16 @@ const Contact = () => {
             PortHarcourt
           </p>
           <p>
-            <i className="ri-mail-fill"></i> carstore@gmail.com
+            <i className="ri-mail-fill"></i>Support: supportcarshop@gmail.com
           </p>
           <p>
-            <span style={{ color: "gold" }}>
+            <a
+              href="tel:+2349153678691"
+              style={{ color: "gold", cursor: "pointer" }}
+            >
               <i className="ri-cellphone-fill"></i> HAS A QUESTION?
-            </span>
-            :+2348156678435
+              :+2349153678691
+            </a>
           </p>
         </div>
         <div className="contact-right">

@@ -44,7 +44,7 @@ export const data = [
     make: "toyota",
     color: "white",
     condition: "new",
-    oil: "fuel",
+    location: "Abuja",
     autonomy: "643",
   },
 
@@ -58,7 +58,7 @@ export const data = [
     make: "bmw",
     color: "white",
     condition: "new",
-    oil: "fuel",
+    location: "Akure",
     autonomy: "700",
   },
 
@@ -72,7 +72,7 @@ export const data = [
     make: "nissan",
     color: "red",
     condition: "new",
-    oil: "fuel",
+    location: "Surulere",
     autonomy: "409.2",
   },
 
@@ -88,7 +88,7 @@ export const data = [
     make: "benz",
     color: "ash",
     condition: "foreign used",
-    oil: "fuel",
+    location: "Abuja",
     autonomy: "453km",
   },
 
@@ -102,7 +102,7 @@ export const data = [
     make: "toyota",
     color: "black",
     condition: "foreign used",
-    oil: "fuel",
+    location: "Akure",
     autonomy: "462",
   },
 
@@ -116,7 +116,7 @@ export const data = [
     make: "bmw",
     color: "blue",
     condition: "new",
-    oil: "fuel",
+    location: "Abuja",
     autonomy: "660",
   },
 
@@ -130,7 +130,7 @@ export const data = [
     make: "nissan",
     color: "red",
     condition: "new",
-    oil: "fuel",
+    location: "Surulere",
     autonomy: "304",
   },
 
@@ -145,7 +145,7 @@ export const data = [
     make: "benz",
     color: "white",
     condition: "nigerian new",
-    oil: "fuel",
+    location: "Akure",
     autonomy: "457",
   },
 
@@ -159,7 +159,7 @@ export const data = [
     color: "ash",
     make: "toyota",
     condition: "new",
-    oil: "fuel",
+    location: "Abuja",
     autonomy: "835",
   },
   {
@@ -172,7 +172,7 @@ export const data = [
     make: "toyota",
     color: "black",
     condition: "new",
-    oil: "fuel",
+    location: "Surulere",
     autonomy: "456",
   },
   {
@@ -185,7 +185,7 @@ export const data = [
     make: "toyota",
     color: "white",
     condition: "foreign used",
-    oil: "fuel",
+    location: "Abuja",
     autonomy: "643",
   },
 
@@ -199,7 +199,7 @@ export const data = [
     make: "bmw",
     color: "ash",
     condition: "nigerian used",
-    oil: "fuel",
+    location: "Akure",
     autonomy: "300",
   },
 ];

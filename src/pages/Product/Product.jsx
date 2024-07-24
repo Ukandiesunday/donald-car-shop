@@ -8,6 +8,7 @@ import RelatedCars from "../../components/RelatedCars/RelatedCars";
 import Subscription from "../../components/Subscription";
 import { addToCart, decrease } from "../../components/redux1/cartSlice";
 import { formatMoney } from "../../components/utility/formatMoney";
+import { FaArrowLeftLong, FaLocationDot } from "react-icons/fa6";
 
 const Product = () => {
   const [mainImg, setMainImg] = useState(0);
@@ -21,8 +22,17 @@ const Product = () => {
   const singleItem = data.find((item) => item.id === id);
 
   // Sending same single item to the cart state i.e payloadItems;
-  const { title, img, desc, price, condition, make, color, autonomy, oil } =
-    singleItem;
+  const {
+    title,
+    img,
+    desc,
+    price,
+    condition,
+    make,
+    color,
+    autonomy,
+    location,
+  } = singleItem;
 
   const payloadItems = {
     title,
@@ -32,7 +42,7 @@ const Product = () => {
     make,
     id,
     color,
-    oil,
+    location,
     autonomy,
     quantity: 1,
     total: 0,
@@ -47,9 +57,14 @@ const Product = () => {
     <div>
       <div className="product">
         <div className="product-left">
-          <h2 className="h2">
-            proceed to buy your {condition} {make} car
-          </h2>
+          <div className="title-container">
+            <Link to={"/products"} className="link arrow-back">
+              <FaArrowLeftLong className="arrow-back-icon" />
+            </Link>
+            <h2 className="h2">
+              proceed to buy your {condition} {make} car
+            </h2>
+          </div>
           <div className="product-center">
             <div className="img">
               <img src={img[mainImg]} alt="" />
@@ -110,6 +125,9 @@ const Product = () => {
             <h4>DESCRIPTION</h4>
             {desc}
           </div>
+          <span className="location">
+            <FaLocationDot /> {location}
+          </span>
         </div>
       </div>
       <div>

@@ -1,16 +1,16 @@
 import "./SearchBar.css";
 
-const SearchBar = ({ handleQueryChange, query, setQuery }) => {
+const SearchBar = ({ query, handleSearchChange }) => {
   return (
     <div className="search-bar">
       <input
         type="text"
         value={query}
-        // onChange={handleQueryChange}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={handleSearchChange}
         placeholder="Search cars... e.g nissan, benz"
       />
-      <i className="ri-search-line" onClick={handleQueryChange}></i>
+
+      <i className="ri-search-line"></i>
     </div>
   );
 };

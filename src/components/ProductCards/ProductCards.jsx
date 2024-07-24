@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
 import { formatMoney } from "../utility/formatMoney";
 import { FaLocationDot } from "react-icons/fa6";
-const ProductCards = ({ products, filteredItems }) => {
+const ProductCards = ({ products }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // const pageSize = 6;
@@ -20,7 +20,7 @@ const ProductCards = ({ products, filteredItems }) => {
 
   // to handle filter error
 
-  if (filteredItems.length === 0) {
+  if (products.length === 0) {
     return (
       <h2 style={{ textAlign: "center", marginTop: "40px" }}>
         {" "}

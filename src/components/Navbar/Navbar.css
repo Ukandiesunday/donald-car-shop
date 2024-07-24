@@ -52,12 +52,12 @@
 .avatar {
   width: 30px;
   height: 30px;
-  cursor: pointer;
 }
 .avatar-container {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 5px;
+  cursor: pointer;
 }
 .auth {
   font-weight: 500;

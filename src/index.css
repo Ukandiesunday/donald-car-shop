@@ -48,12 +48,13 @@ li {
 }
 /* style rules for make */
 .make {
-  padding: 0 10% 30px 10%;
+  padding: 0 10% 0px 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
 }
+
 .make-wrapper {
   width: 60px;
   height: 60px;

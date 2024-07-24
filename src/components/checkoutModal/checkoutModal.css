@@ -7,12 +7,12 @@
   color: black;
 
   font-weight: 600;
-  right: 10px;
+  right: 5px;
   bottom: 100px;
 
   right: 10px;
   padding: 40px 50px;
-  width: 400px;
+  max-width: fit-content;
   height: fit-content;
   flex-direction: column;
   gap: 10px;
@@ -35,4 +35,10 @@
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .checkout-modal {
+    max-width: 100%;
+  }
 }

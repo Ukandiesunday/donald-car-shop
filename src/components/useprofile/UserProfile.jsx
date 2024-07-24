@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { IoIosLogOut } from "react-icons/io";
 import "./userProfile.css";
 import { IoClose } from "react-icons/io5";
+
 import { removeItem } from "../utility/storage";
 import { auth } from "../../firebase";
 import { logout } from "../redux1/authSlice";

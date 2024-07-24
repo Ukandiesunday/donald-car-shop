@@ -3,7 +3,7 @@ import "./Navbar.css";
 import team2 from "../../assets/images/user-01.png";
 import { useState } from "react";
 import UserProfile from "../../components/useprofile/UserProfile";
-
+import { FaChevronDown } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
@@ -51,6 +51,7 @@ const Navbar = () => {
             {user ? (
               <div onClick={handleProfileOpen} className="avatar-container">
                 <img src={team2} alt="" className="avatar" />
+                <FaChevronDown />
               </div>
             ) : (
               <>

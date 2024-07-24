@@ -22,12 +22,14 @@ import Login from "./components/login/Login";
 import { calculate } from "./components/redux1/cartSlice";
 import { storeItem } from "./components/utility/storage";
 import ForgotPassword from "./components/forgotpassword/Forgotpassword";
+import Reviews from "./components/Reviews/Reviews";
 
 const SharedLayout = () => {
   return (
     <div className="app">
       <Navbar />
       <Outlet />
+      <Reviews />
       <Footer />
     </div>
   );

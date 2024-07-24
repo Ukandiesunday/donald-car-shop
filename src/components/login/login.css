@@ -107,6 +107,7 @@
   font-size: 14px;
   text-decoration: none;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 .checkbox-container {
   display: flex;
@@ -141,6 +142,7 @@
   gap: 10px;
   align-items: center;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 @media (max-width: 768px) {
   .login-container {

@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { retrieveItem } from "../utility/storage";
 
 const initialState = {
-  products: [],
+  products: retrieveItem("products") || [],
   total: 0,
   amount: 0,
   isLoading: true,
@@ -19,7 +20,6 @@ const cartSlice = createSlice({
       } else {
         state.products.push(action.payload);
       }
-      console.log(state.products);
     },
     decrease: (state, action) => {
       const item = state.products.find((item) => item.id === action.payload.id);

@@ -48,7 +48,6 @@ const Product = () => {
     total: 0,
   };
 
-  console.log(payloadItems);
   const handleImgChange = (index) => {
     setMainImg(index);
   };

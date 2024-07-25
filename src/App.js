@@ -20,7 +20,7 @@ import Cart from "./components/Cart/Cart";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 import { calculate } from "./components/redux1/cartSlice";
-import { storeItem } from "./components/utility/storage";
+import { removeItem, storeItem } from "./components/utility/storage";
 import ForgotPassword from "./components/forgotpassword/Forgotpassword";
 import Reviews from "./components/Reviews/Reviews";
 
@@ -48,6 +48,14 @@ function App() {
   useEffect(() => {
     storeItem("user", currentUser);
   }, [currentUser]);
+
+  useEffect(() => {
+    storeItem("products", products);
+
+    if (products.length === 0) {
+      removeItem("products");
+    }
+  }, [products]);
 
   const RequiredRoute = ({ children }) => {
     return currentUser ? children : <Navigate to="/login" />;

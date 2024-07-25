@@ -36,6 +36,7 @@ const Navbar = () => {
                   <NavLink
                     className={({ isActive }) => (isActive ? "active" : "link")}
                     to={path}
+                    onClick={() => window.scrollTo({ top: "0" })}
                   >
                     {link}
                   </NavLink>
@@ -43,7 +44,11 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <Link className="link" to="/">
+          <Link
+            className="link"
+            to="/"
+            onClick={() => window.scrollTo({ top: "0" })}
+          >
             <div className="logo">carShop</div>
           </Link>
 
@@ -87,6 +92,7 @@ const Navbar = () => {
                 <NavLink
                   className={({ isActive }) => (isActive ? "active" : "link")}
                   to={path}
+                  onClick={() => window.scrollTo({ top: "0" })}
                 >
                   {link}
                 </NavLink>

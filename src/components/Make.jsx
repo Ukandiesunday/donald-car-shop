@@ -4,7 +4,7 @@ import benz from "../assets/images/benz.png";
 import toyota from "../assets/images/toyota.png";
 import nissan from "../assets/images/nissan.png";
 import all from "../assets/images/aboutImg.jpg";
-const Make = ({ handleMakeClick }) => {
+const Make = ({ handleMakeClick, handleScrollBottom }) => {
   const cars = [
     { makeLogo: all, name: "all", label: "all" },
     { makeLogo: nissan, name: "nissan", label: "nissan" },
@@ -19,7 +19,10 @@ const Make = ({ handleMakeClick }) => {
           <button
             key={ind}
             className="make-wrapper"
-            onClick={() => handleMakeClick(car.name)}
+            onClick={() => {
+              handleMakeClick(car.name);
+              handleScrollBottom();
+            }}
           >
             <img
               style={{ objectFit: "cover", borderRadius: "50%" }}

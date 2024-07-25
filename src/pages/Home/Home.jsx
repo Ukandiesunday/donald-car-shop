@@ -7,15 +7,17 @@ import { useRef } from "react";
 import Service from "../../components/Service/Service";
 
 const Home = () => {
-  //to scroll down
-  const myElementRef = useRef(null);
+  const productsElementRef = useRef(null); //to scroll down products
   const handleScrollBottom = () => {
-    myElementRef.current.scrollIntoView({ behavior: "smooth" });
+    productsElementRef.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
     <div className="home">
       <HeroSlider handleScrollBottom={handleScrollBottom} />
-      <Products myElementRef={myElementRef} />
+      <Products
+        productsElementRef={productsElementRef}
+        handleScrollBottom={handleScrollBottom}
+      />
       <div className="space"></div>
       <Service />
 

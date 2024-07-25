@@ -5,7 +5,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import { data } from "../../assets/data/data";
 import { useState } from "react";
 import Make from "../../components/Make";
-const Products = ({ myElementRef }) => {
+const Products = ({ productsElementRef, handleScrollBottom }) => {
   const [query, setQuery] = useState("");
 
   const [selectedMake, setSelectedMake] = useState("all");
@@ -31,11 +31,14 @@ const Products = ({ myElementRef }) => {
   return (
     <div className="products-wrapper">
       <div className="make-container">
-        <Make handleMakeClick={handleMakeClick} />
+        <Make
+          handleMakeClick={handleMakeClick}
+          handleScrollBottom={handleScrollBottom}
+        />
       </div>
 
       <div className="products">
-        <div className="prod-right" ref={myElementRef}>
+        <div className="prod-right" ref={productsElementRef}>
           <h3>explore our affordable and durable cars</h3>
           <SearchBar query={query} handleSearchChange={handleSearchChange} />
           <ProductCards products={filteredCars} />

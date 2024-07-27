@@ -5,6 +5,7 @@ import { useState } from "react";
 import UserProfile from "../../components/useprofile/UserProfile";
 import { FaChevronDown } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { scrollTop } from "../utility/scrollTop";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
                   <NavLink
                     className={({ isActive }) => (isActive ? "active" : "link")}
                     to={path}
-                    onClick={() => window.scrollTo({ top: "0" })}
+                    onClick={scrollTop}
                   >
                     {link}
                   </NavLink>
@@ -44,17 +45,19 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <Link
-            className="link"
-            to="/"
-            onClick={() => window.scrollTo({ top: "0" })}
-          >
-            <div className="logo">carShop</div>
+          <Link className="link" to="/" onClick={scrollTop}>
+            <div className="logo">DonCars</div>
           </Link>
 
           <div className="profile-container">
             {user ? (
-              <div onClick={handleProfileOpen} className="avatar-container">
+              <div
+                onClick={() => {
+                  handleProfileOpen();
+                  scrollTop();
+                }}
+                className="avatar-container"
+              >
                 <img src={team2} alt="" className="avatar" />
                 <FaChevronDown />
               </div>
@@ -92,7 +95,7 @@ const Navbar = () => {
                 <NavLink
                   className={({ isActive }) => (isActive ? "active" : "link")}
                   to={path}
-                  onClick={() => window.scrollTo({ top: "0" })}
+                  onClick={scrollTop}
                 >
                   {link}
                 </NavLink>

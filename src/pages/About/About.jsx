@@ -15,7 +15,7 @@ const About = () => {
       <div className="about-left">
         <div className="div1">
           <p>
-            <b>carShop</b> is known for excellent car sales and services. We've
+            <b>DonCars</b> is known for excellent car sales and services. We've
             recorded great success adventures in our business for more than
             decades, our clients/customers are placed at high esteem as we meet
             their desires accordingly. Moreover our cars are best described with

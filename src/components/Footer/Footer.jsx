@@ -50,7 +50,7 @@ const Footer = () => {
           Made with <i className="ri-heart-fill"></i> by Ukandie Sunday.
         </div>
         <div>
-          &copy;copy right {new Date().getFullYear()} carShop, All rights
+          &copy;copy right {new Date().getFullYear()} DonCars, All rights
           reserved.
         </div>
       </div>

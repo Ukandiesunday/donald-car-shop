@@ -16,6 +16,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../redux1/authSlice";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -47,12 +48,11 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential?.user?.accessToken;
-        console.log(user);
+
         if (user) {
           dispatch(login(user));
-
+          toast.success("logged in successfully");
           reset();
-
           navigate("/");
           setLoading(false);
         }

@@ -32,11 +32,15 @@
 
 .checkout-details h3 {
   color: #00c1ae;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
 }
-
+.comingSoon {
+  margin-top: 20px;
+  font-size: 500;
+  color: #00c1ae;
+}
 @media (max-width: 768px) {
   .checkout-modal {
     max-width: 100%;

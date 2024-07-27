@@ -33,7 +33,7 @@ const Contact = () => {
             PortHarcourt
           </p>
           <p>
-            <i className="ri-mail-fill"></i>Support: supportcarshop@gmail.com
+            <i className="ri-mail-fill"></i>Support: supportdoncars@gmail.com
           </p>
           <p>
             <a

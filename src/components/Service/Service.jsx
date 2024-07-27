@@ -9,7 +9,7 @@ const Service = () => {
       <div className="service-container">
         <div className="serv-first-item-cont">
           <div className="serv-desc1">
-            Become <b>carStore</b> Dealer Partner. Buy used and new cars below
+            Become <b>DonCars</b> Dealer Partner. Buy used and new cars below
             the market price and increase your margin up to 30%
             <Link className="learnMore" to={"/about"}>
               learn More
@@ -41,7 +41,7 @@ const Service = () => {
               <div className="serv-desc3">
                 Check the inspection report. <br /> It helps to understand the
                 true <br />
-                condition of a car.
+                condition of our cars.
               </div>
             </div>
           </div>

@@ -10,9 +10,6 @@
   padding: 30px 0px;
 }
 .products {
-  /* display: flex; */
-  /* flex-wrap: wrap;
-  justify-content: space-between; */
   margin: 30px 0 0px;
 }
 
@@ -22,10 +19,7 @@
   margin-bottom: 30px;
   font-size: 30px;
 }
-/* .prod-right {
-  /* flex-basis: 84%; */
-/* justify-items: right;
-}  */
+
 @media (max-width: 768px) {
   .prod-right h3 {
     font-size: 25px;

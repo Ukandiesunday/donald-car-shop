@@ -29,7 +29,7 @@ const Products = ({ productsElementRef, handleScrollBottom }) => {
   });
 
   return (
-    <div className="products-container1">
+    <div className="products products-container1">
       <div className="products-wrapper">
         <div className="make-container">
           <Make

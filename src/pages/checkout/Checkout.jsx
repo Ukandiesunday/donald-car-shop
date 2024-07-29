@@ -1,24 +1,36 @@
-import { useForm } from "react-hook-form";
-
-import { yupResolver } from "@hookform/resolvers/yup";
-import "./Contact.css";
-import contact from "../../assets/images/contact.png";
-import TextInput from "../../components/textInput/TextInput";
-import Button from "../../components/button/Button";
-import { messageSchema } from "../../formSchema/schema";
 import { useState } from "react";
+import "./checkout.css";
+import TextInput from "../../components/textInput/TextInput";
+import { checkoutSchema } from "../../formSchema/schema";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-const Contact = () => {
+import { yupResolver } from "@hookform/resolvers/yup";
+import Button from "../../components/button/Button";
+
+const Checkout = () => {
   const [isLoading, setLoading] = useState(false);
   const access_key = process.env.REACT_APP_ACCESS_KEY;
+
+  // const { firstName, lastName } = useWatch({
+  //   control,
+  //   name: ["firstName", "lastName"],
+  //   defaultValue: {
+  //     firstName: "",
+  //     lastName: "",
+  //   },
+  // });
+
+  // // Determine if the button should be enabled
+  // const isButtonDisabled = !firstName || !lastName;
+  // const accesskey = process.env.REACT_APP_ACCESS_KEY;
+
   const {
-    register,
     handleSubmit,
+    register,
     reset,
+
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(messageSchema),
-  });
+  } = useForm({ resolver: yupResolver(checkoutSchema) });
 
   const handleFormSubmit = async (data, e) => {
     e.preventDefault();
@@ -52,30 +64,17 @@ const Contact = () => {
       }
     }
   };
+
   return (
     <div className="contact-wrapper">
       <div className="contact">
         <div className="contact-left">
-          <h1>contact us</h1>
-          <div className="contact-img-container">
-            <img src={contact} alt="" />
-          </div>
-          <p>
-            <i className="ri-map-pin-fill"></i> No.53 Elios Rumoudara
-            PortHarcourt
-          </p>
-          <p>
-            <i className="ri-mail-fill"></i>Support: supportdoncars@gmail.com
-          </p>
-          <p>
-            <a
-              href="tel:+2349153678691"
-              style={{ color: "gold", cursor: "pointer" }}
-            >
-              <i className="ri-cellphone-fill"></i> HAS A QUESTION?
-              :+2349153678691
-            </a>
-          </p>
+          <h2>Payment Details</h2>
+          <p>Account name {""}: Sam Donald</p>
+          <p>Bank Name {""} : Opay</p>
+          <p>Account number {""}: 91788346789</p>
+          <p>Send mail {""}:doncars@gmail.com</p>
+          <p>whatsapp or call {""} :+2349153678691</p>
         </div>
         <div className="contact-right">
           <div className="form-container">
@@ -84,7 +83,7 @@ const Contact = () => {
               action=""
               onSubmit={handleSubmit(handleFormSubmit)}
             >
-              <h2>Leave a message </h2>
+              <h2>Carefully fill out this invoice </h2>
               <input
                 type="hidden"
                 {...register("access_key")}
@@ -92,38 +91,37 @@ const Contact = () => {
               />
               <div className="form-item-container">
                 <TextInput
-                  register={register("surname")}
-                  placeholder={"Surname"}
-                  label={"surname"}
+                  register={register("fullName")}
+                  placeholder={"Full name"}
+                  label={"Your full Name"}
                   type={"text"}
-                  errorMessage={errors.surname?.message}
+                  errorMessage={errors.fullName?.message}
                   isError={errors}
                 />
 
                 <TextInput
-                  register={register("otherNames")}
-                  placeholder={"Other names"}
-                  label={"Other names"}
+                  register={register("address")}
+                  placeholder={"Address"}
+                  label={"Your Address"}
                   type={"text"}
-                  errorMessage={errors.otherNames?.message}
+                  errorMessage={errors.address?.message}
                   isError={errors}
                 />
               </div>
-
               <div className="form-item-container">
                 <TextInput
                   register={register("email")}
                   placeholder={"Email"}
-                  label={"email"}
+                  label={"Your email"}
                   type={"text"}
-                  errorMessage={errors.email?.message}
+                  errorMessage={errors?.email?.message}
                   isError={errors}
                 />
 
                 <TextInput
                   register={register("phone")}
-                  placeholder={"Phone"}
-                  label={"phone"}
+                  placeholder={"+2349024678934"}
+                  label={"phone(whatsapp)"}
                   type={"text"}
                   errorMessage={errors.phone?.message}
                   isError={errors}
@@ -131,12 +129,12 @@ const Contact = () => {
               </div>
               <div className="item">
                 <textarea
+                  id="message"
+                  cols={8}
+                  rows={8}
+                  maxLength={300}
                   {...register("message")}
-                  cols={15}
-                  rows={10}
-                  maxLength={200}
-                  id="Message"
-                  placeholder="Send a message...."
+                  placeholder="Detail car description and amount ...."
                 ></textarea>
                 {errors?.message && (
                   <p className="error">{errors?.message?.message}</p>
@@ -155,4 +153,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Checkout;

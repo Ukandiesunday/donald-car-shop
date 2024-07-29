@@ -43,13 +43,21 @@ export const messageSchema = yup.object().shape({
   surname: yup.string().required("Enter surname!"),
   otherNames: yup.string().required("Enter other names!"),
   email: yup.string().email(" Invalid email!").required(" Enter email!"),
-  phone: yup
-    .string()
-    .matches(/^[0-9]{11}$/, "Invalid phone number")
-    .required("Enter phone number"),
+  phone: yup.string().required("phone number is required"),
   message: yup.string().required("Type your message"),
+  access_key: yup.string(),
 });
 
 export const forgotPasswordSchema = yup.object().shape({
   email: yup.string().required("Enter email").email("Enter a valid email"),
+});
+
+export const checkoutSchema = yup.object().shape({
+  fullName: yup.string().required("Full name required!"),
+  address: yup.string().required("Address required!"),
+  email: yup.string().email(" Invalid email!").required(" Email required!"),
+  phone: yup.string().required("phone number is required"),
+
+  access_key: yup.string(),
+  message: yup.string().required("Type your message"),
 });

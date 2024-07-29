@@ -23,6 +23,7 @@ import { calculate } from "./components/redux1/cartSlice";
 import { removeItem, storeItem } from "./components/utility/storage";
 import ForgotPassword from "./components/forgotpassword/Forgotpassword";
 import Reviews from "./components/Reviews/Reviews";
+import Checkout from "./pages/checkout/Checkout";
 
 const SharedLayout = () => {
   return (
@@ -90,12 +91,20 @@ function App() {
               path="/cart"
               element={
                 <RequiredRoute>
-                  <Cart />{" "}
+                  <Cart />
                 </RequiredRoute>
               }
             />
             <Route path="/login" element={<Login />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route
+              path="/checkout"
+              element={
+                <RequiredRoute>
+                  <Checkout />
+                </RequiredRoute>
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>

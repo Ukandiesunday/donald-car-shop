@@ -90,6 +90,7 @@
   font-weight: 500;
   /* margin-bottom: 15px; */
   border-radius: 5px;
+  text-align: center;
 }
 
 .bottom-modal {
@@ -146,9 +147,14 @@
   border-radius: 2px;
   background-color: #80e3d9;
 }
-.title-container {
+.title-container1 {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 10px;
+}
+.title-container1 h1 {
+  margin-top: 20px;
 }
 @media (max-width: 768px) {
   .cart-modal {

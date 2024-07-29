@@ -10,10 +10,12 @@ import { scrollTop } from "../utility/scrollTop";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpenProfile, setOpenProfile] = useState(false);
-  const { cart, auth } = useSelector((state) => state);
+  const { total } = useSelector((state) => state.cart);
+  const { currentUser } = useSelector((state) => state.auth);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   const navItems = [
     { path: "/", link: "Home" },
     { path: "/products", link: "Cars" },
@@ -24,7 +26,7 @@ const Navbar = () => {
   const handleProfileOpen = () => {
     setOpenProfile(!isOpenProfile);
   };
-  const user = auth?.currentUser;
+  const user = currentUser;
 
   return (
     <div className="navbar">
@@ -75,7 +77,7 @@ const Navbar = () => {
           <Link className="link" to="/cart">
             <span className="cart">
               <i className="ri-shopping-cart-2-line"></i>
-              <span className="cart-amount">{cart?.total}</span>
+              <span className="cart-amount">{total}</span>
             </span>
           </Link>
           <div onClick={toggleMenu} className="menu-button">

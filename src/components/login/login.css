@@ -58,14 +58,17 @@
   border-radius: 10px !important;
   position: relative;
 }
-.prov-password {
-  padding: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: red;
+.credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #efeaea;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.credentials span {
+  padding-left: 20px;
 }
 
 .form {
@@ -119,16 +122,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 19px;
-  height: 19px;
+  width: 22px;
+  height: 22px;
   border-radius: 5px;
   border: 1.5px solid #cbd1da;
   overflow: hidden;
 }
 .checkmark {
   background: rgb(0, 193, 174);
-  height: 19px;
-  width: 19px;
+  height: 22px;
+  width: 22px;
   color: #fff;
   padding: 2px;
 }

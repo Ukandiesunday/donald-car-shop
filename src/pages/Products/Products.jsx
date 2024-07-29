@@ -29,19 +29,21 @@ const Products = ({ productsElementRef, handleScrollBottom }) => {
   });
 
   return (
-    <div className="products-wrapper">
-      <div className="make-container">
-        <Make
-          handleMakeClick={handleMakeClick}
-          handleScrollBottom={handleScrollBottom}
-        />
-      </div>
+    <div className="products-container1">
+      <div className="products-wrapper">
+        <div className="make-container">
+          <Make
+            handleMakeClick={handleMakeClick}
+            handleScrollBottom={handleScrollBottom}
+          />
+        </div>
 
-      <div className="products">
-        <div className="prod-right" ref={productsElementRef}>
-          <h3>explore our affordable and durable cars</h3>
-          <SearchBar query={query} handleSearchChange={handleSearchChange} />
-          <ProductCards products={filteredCars} />
+        <div className="products">
+          <div className="prod-right" ref={productsElementRef}>
+            <h3>explore our affordable and durable cars</h3>
+            <SearchBar query={query} handleSearchChange={handleSearchChange} />
+            <ProductCards products={filteredCars} />
+          </div>
         </div>
       </div>
     </div>

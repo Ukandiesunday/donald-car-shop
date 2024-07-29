@@ -80,12 +80,15 @@ const Login = () => {
 
         <div className="form-container">
           <form className="form" action="" onSubmit={handleSubmit(onSubmit)}>
-            <div className="prov-password">
-              <p>E: sam123@gmail.com</p>
-              <p>p: Sam!@123</p>
-            </div>
             <h2 className="h2">Sign in</h2>
-
+            <div className="credentials">
+              <p>
+                Email: <span>sam123@gmail.com</span>
+              </p>
+              <p>
+                password: <span>Sam!@123 </span>
+              </p>
+            </div>
             <TextInput
               label="email"
               placeholder="Enter email"

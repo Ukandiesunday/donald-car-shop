@@ -1,5 +1,10 @@
+.products-container1 {
+  padding-inline: 40px;
+}
+
 .products-wrapper {
-  margin: 80px 0 100px 0;
+  margin: 80px auto 100px auto;
+  max-width: 1440px;
 }
 .make-container {
   padding: 30px 0px;
@@ -8,8 +13,7 @@
   /* display: flex; */
   /* flex-wrap: wrap;
   justify-content: space-between; */
-  margin: 30px 0 80px;
-  padding: 0 4%;
+  margin: 30px 0 0px;
 }
 
 .prod-right h3 {

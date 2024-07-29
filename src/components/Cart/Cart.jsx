@@ -8,20 +8,15 @@ import { addToCart, decrease, removeItem } from "../redux1/cartSlice";
 import { openModal } from "../redux1/modalSlice";
 import { formatMoney } from "../utility/formatMoney";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { useState } from "react";
-import CheckoutModal from "../checkoutModal/CheckoutModal";
+import { scrollTop } from "../utility/scrollTop";
 
 const Cart = () => {
   // amount, products
   const { products, amount } = useSelector((state) => state.cart);
 
   const { isModalOpen } = useSelector((state) => state.modal);
-  const [isOpenCheckout, setOpenCheckout] = useState(false);
 
   // toggle checkout modal
-  const toggleCheckoutModal = () => {
-    setOpenCheckout((prev) => !prev);
-  };
 
   const dispatch = useDispatch();
   if (products?.length < 1) {
@@ -38,7 +33,7 @@ const Cart = () => {
   return (
     <div>
       <div className="cart-modal">
-        <div className="title-container">
+        <div className="title-container1">
           <Link to={"/products"} className="link arrow-back">
             <FaArrowLeftLong className="arrow-back-icon" />
           </Link>
@@ -98,15 +93,13 @@ const Cart = () => {
           })}
 
           <div className="bottom-modal">
-            {isOpenCheckout && (
-              <CheckoutModal toggleCheckoutModal={toggleCheckoutModal} />
-            )}
-            <button
-              className="checkout-btn cart-btn"
-              onClick={toggleCheckoutModal}
+            <Link
+              to={"/checkout"}
+              className="checkout-btn cart-btn link"
+              onClick={scrollTop}
             >
               CHECKOUT
-            </button>
+            </Link>
             <a href="tel:+2349153678691" className="call">
               <br />
               Call To Order: +2349153678691

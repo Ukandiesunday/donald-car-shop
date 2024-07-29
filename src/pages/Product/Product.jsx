@@ -60,9 +60,7 @@ const Product = () => {
             <Link to={"/products"} className="link arrow-back">
               <FaArrowLeftLong className="arrow-back-icon" />
             </Link>
-            <h2 className="h2">
-              proceed to buy your {condition} {make} car
-            </h2>
+            <h2 className="h2">proceed to buy your {make} car</h2>
           </div>
           <div className="product-center">
             <div className="img">

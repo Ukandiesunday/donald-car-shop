@@ -1,0 +1,117 @@
+.hero-container1 {
+  min-height: 100vh;
+  background: linear-gradient(rgba(95, 230, 230, 0.4), rgba(104, 235, 235, 0.4)),
+    url(/public/slider/nissan.jpg) center/contain no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding-top: 60px;
+  padding-inline: 40px;
+}
+.hero-wrapper1 {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  gap: 100px;
+  margin: auto;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 50%;
+  gap: 50px;
+  align-items: baseline;
+  line-height: 30px;
+}
+.hero-header {
+  line-height: 30px;
+  font-size: clamp(25px, 3.5vw, 30px);
+
+  font-weight: bold;
+  color: transparent;
+
+  font-weight: bold;
+  background: linear-gradient(to right, yellow, orange, teal);
+  background-clip: text;
+  -webkit-background-clip: text;
+  line-height: 30px;
+}
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 50%;
+}
+.hero-desc {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+.hero-p2 {
+  align-self: flex-end;
+  color: rgb(255, 83, 42);
+
+  font-size: 25px;
+  font-weight: 600;
+
+  animation: bounce 1s infinite alternate;
+}
+.hero-btn {
+  align-self: flex-end;
+  padding: 15px 15px;
+  background: rgb(0, 193, 174);
+  max-width: 250px;
+  border-radius: 25px;
+  font-size: 17px;
+  align-items: center;
+  font-weight: 600;
+  border: 2px rgb(0, 193, 174);
+  box-shadow: 2px 4px 4px 8px rgb(0, 193, 174);
+
+  transition: all 0.6s ease;
+  margin-bottom: 30px;
+}
+.hero-btn:hover {
+  background: rgb(0, 193, 174);
+
+  box-shadow: none;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container1 {
+    padding-top: 20px;
+    padding-inline: 15px;
+  }
+  .hero-wrapper1 {
+    width: 100%;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .hero-left,
+  .hero-right {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .hero-btn {
+    width: 100% !important;
+    display: block;
+    align-self: center;
+    margin-top: 30px;
+  }
+  .hero-p2 {
+    display: none;
+  }
+}

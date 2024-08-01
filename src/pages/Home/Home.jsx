@@ -1,4 +1,4 @@
-import HeroSlider from "../../components/Hero/HeroSlider";
+import Hero from "../../components/Hero/Hero";
 import "./Home.css";
 import Products from "../../pages/Products/Products";
 
@@ -13,7 +13,7 @@ const Home = () => {
   };
   return (
     <div className="home">
-      <HeroSlider />
+      <Hero handleScrollBottom={handleScrollBottom} />
       <Products
         productsElementRef={productsElementRef}
         handleScrollBottom={handleScrollBottom}

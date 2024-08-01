@@ -24,4 +24,10 @@
   .prod-right h3 {
     font-size: 25px;
   }
+  .products-wrapper {
+    width: 100%;
+  }
+  .products-container1 {
+    padding-inline: 15px;
+  }
 }
